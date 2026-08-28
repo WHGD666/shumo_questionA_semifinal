@@ -1,0 +1,8 @@
+{
+  "seed": 2026,
+  "development_fraction": 0.8,
+  "holdout_fraction": 0.2,
+  "cv_folds": 5,
+  "rows": 10000,
+  "data_file": "A题数据集.csv"
+}

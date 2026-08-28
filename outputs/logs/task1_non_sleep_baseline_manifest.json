@@ -1,0 +1,27 @@
+{
+  "task": "task1",
+  "target": "Sleep_Quality_Score",
+  "forbidden": [
+    "Nap_Frequency_Per_Week",
+    "Number_of_Night_Awakenings",
+    "Person_ID",
+    "Screen_Time_Before_Bed_Hours",
+    "Sleep_Disorder_Risk",
+    "Sleep_Duration_Hours",
+    "Sleep_Quality_Score",
+    "Sleep_Time",
+    "Wake_Up_Time",
+    "Weekend_Sleep_Difference_Hours"
+  ],
+  "feature_count": 54,
+  "development_rows": 8000,
+  "cv_folds": 5,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "models": [
+    "dummy_mean",
+    "ridge",
+    "elastic_net",
+    "extra_trees"
+  ]
+}

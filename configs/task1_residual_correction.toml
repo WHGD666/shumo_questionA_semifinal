@@ -1,0 +1,36 @@
+[experiment]
+task = "task1"
+name = "non_sleep_nested_residual_correction"
+role = "controlled_improvement"
+target = "Sleep_Quality_Score"
+seed = 2026
+outer_folds = 5
+inner_folds = 4
+feature_contract = "full_non_sleep"
+holdout_evaluated = false
+
+[base_model]
+family = "spline_ridge"
+n_knots = 4
+degree = 2
+alpha = 1.0
+control_oof_r2 = 0.7906023958255962
+
+[residual_models.ridge]
+alpha = 10.0
+
+[residual_models.lightgbm]
+n_estimators = 300
+learning_rate = 0.03
+num_leaves = 15
+min_child_samples = 30
+reg_alpha = 0.5
+reg_lambda = 2.0
+
+[blend]
+weights = [0.25, 0.5, 0.75, 1.0]
+
+[selection]
+primary_metric = "oof_r2"
+tie_breakers = ["fold_r2_std", "oof_rmse"]
+minimum_material_improvement = 0.001

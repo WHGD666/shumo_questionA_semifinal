@@ -1,0 +1,22 @@
+[experiment]
+task = "task1"
+name = "non_sleep_linear_tuning"
+role = "controlled_improvement"
+target = "Sleep_Quality_Score"
+seed = 2026
+cv_folds = 5
+holdout_evaluated = false
+
+[ridge]
+alphas = [0.1, 1.0, 3.0, 10.0, 30.0, 100.0]
+
+[elastic_net]
+alphas = [0.001, 0.005, 0.01]
+l1_ratios = [0.1, 0.5, 0.9]
+max_iter = 10000
+
+[selection]
+primary_metric = "oof_r2"
+tie_breakers = ["r2_std", "oof_rmse", "complexity"]
+baseline_model = "ridge_alpha_10"
+baseline_cv_r2 = 0.7773623256096467

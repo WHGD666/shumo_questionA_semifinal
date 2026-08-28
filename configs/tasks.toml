@@ -1,0 +1,14 @@
+[project]
+name = "innovation-cup-fusai-a"
+data_path = "A题数据集.csv"
+id_column = "Person_ID"
+seed = 2026
+
+[tasks.task1]
+target = "Sleep_Quality_Score"
+
+[tasks.task2]
+target = "Productivity_Score"
+
+[tasks.task3]
+target = "Health_Score"

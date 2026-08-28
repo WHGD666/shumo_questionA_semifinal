@@ -1,0 +1,38 @@
+{
+  "created_at": "2026-08-29T00:47:31.306014+08:00",
+  "task": "task1",
+  "target": "Sleep_Quality_Score",
+  "status": "development_candidate_frozen",
+  "candidate_config": "configs/task1_frozen_candidate.toml",
+  "candidate_config_sha256": "9588a53ce7aa8e7d8d4d0498a795b2a8b1f50e47350254901d83b0f892187d42",
+  "selection_run_id": "20260829T001923+0800_task1_nested_residual_1daa2d59",
+  "confirmation_run_id": "20260829T002532+0800_task1_residual_stability_fe7d4957",
+  "selected_model": "lightgbm_residual_w0p75",
+  "selected_oof_metrics": {
+    "r2": 0.7935867590718252,
+    "mae": 0.5743946660285861,
+    "rmse": 0.721730891558355
+  },
+  "stability_metrics": {
+    "mean_oof_r2": 0.7933608429550241,
+    "std_oof_r2": 0.0003338984313254,
+    "minimum_delta_r2": 0.0023503327909417,
+    "accepted": true
+  },
+  "proxy_disclosure": {
+    "permitted_composite_proxies": [
+      "Health_Score",
+      "Fitness_Level",
+      "Healthy_Aging_Score",
+      "Wellness_Category"
+    ],
+    "proxy_removed_oof_r2": 0.6801783558622492,
+    "proxy_r2_gap": 0.11042403996334704
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "development_rows": 8000,
+  "sealed_holdout_rows": 2000,
+  "holdout_evaluated": false,
+  "final_model_trained": false
+}

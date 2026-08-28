@@ -1,0 +1,22 @@
+[experiment]
+task = "task1"
+name = "non_sleep_proxy_sensitivity"
+role = "scientific_comparison"
+target = "Sleep_Quality_Score"
+seed = 2026
+cv_folds = 5
+holdout_evaluated = false
+
+[contracts.full_non_sleep]
+additional_exclusions = []
+
+[contracts.proxy_removed]
+additional_exclusions = ["Health_Score", "Fitness_Level", "Healthy_Aging_Score", "Wellness_Category"]
+
+[models.ridge]
+alpha = 3.0
+
+[models.elastic_net]
+alpha = 0.001
+l1_ratio = 0.9
+max_iter = 10000

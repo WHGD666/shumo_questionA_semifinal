@@ -1,0 +1,25 @@
+[experiment]
+task = "task1"
+name = "non_sleep_residual_stability"
+role = "candidate_confirmation"
+target = "Sleep_Quality_Score"
+outer_folds = 5
+inner_folds = 4
+inner_seeds = [2026, 2037, 2048, 2059, 2070]
+feature_contract = "full_non_sleep"
+holdout_evaluated = false
+
+[frozen_candidate]
+base_family = "spline_ridge"
+n_knots = 4
+degree = 2
+alpha = 1.0
+residual_family = "lightgbm"
+residual_weight = 0.75
+selection_run_id = "20260829T001923+0800_task1_nested_residual_1daa2d59"
+selection_oof_r2 = 0.7935867590718252
+control_oof_r2 = 0.7906023958255962
+
+[acceptance]
+minimum_mean_delta_r2 = 0.001
+require_positive_delta_for_every_seed = true

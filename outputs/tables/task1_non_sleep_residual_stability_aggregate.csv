@@ -1,0 +1,2 @@
+﻿candidate,seed_count,oof_r2_mean,oof_r2_std,oof_r2_min,oof_r2_max,delta_r2_mean,delta_r2_min,all_seed_deltas_positive,stability_accepted
+spline_ridge_plus_lightgbm_residual_w0p75,5,0.7933608429550241,0.0003338984313254755,0.792952728616538,0.7938020308116525,0.0027584471294279213,0.002350332790941767,True,True

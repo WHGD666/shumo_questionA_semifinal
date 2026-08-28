@@ -1,0 +1,43 @@
+{
+  "run_id": "20260828T220025+0800_task1_structured_071eedc4",
+  "status": "completed",
+  "task": "task1",
+  "target": "Sleep_Quality_Score",
+  "experiment": "non_sleep_structured_models",
+  "experiment_role": "controlled_improvement",
+  "duration_seconds": 299.7066349000015,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0"
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "f78b7be7fdb8aad27dbab619171a97be65bcec16b4a95c24bbd68d2e376a243a",
+  "feature_count": 54,
+  "forbidden_features": [
+    "Nap_Frequency_Per_Week",
+    "Number_of_Night_Awakenings",
+    "Person_ID",
+    "Screen_Time_Before_Bed_Hours",
+    "Sleep_Disorder_Risk",
+    "Sleep_Duration_Hours",
+    "Sleep_Quality_Score",
+    "Sleep_Time",
+    "Wake_Up_Time",
+    "Weekend_Sleep_Difference_Hours"
+  ],
+  "models": [
+    "pls_8",
+    "pls_16",
+    "spline_ridge",
+    "catboost_native"
+  ],
+  "control_model": "elastic_alpha_0p001_l1_0p9",
+  "control_oof_r2": 0.7783725670589594,
+  "best_model": "spline_ridge",
+  "best_oof_r2": 0.7869007019669725,
+  "holdout_evaluated": false
+}

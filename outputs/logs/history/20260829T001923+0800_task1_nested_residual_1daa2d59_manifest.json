@@ -1,0 +1,58 @@
+{
+  "run_id": "20260829T001923+0800_task1_nested_residual_1daa2d59",
+  "status": "completed",
+  "task": "task1",
+  "target": "Sleep_Quality_Score",
+  "experiment": "non_sleep_nested_residual_correction",
+  "experiment_role": "controlled_improvement",
+  "method": "outer 5-fold evaluation with inner 4-fold cross-fitted base predictions for residual targets",
+  "duration_seconds": 4.1177121000000625,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0"
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "126bed5d733d6123614ed686f63d46cf60527a48743920614cd5dd798b45dfa1",
+  "feature_count": 54,
+  "forbidden_features": [
+    "Nap_Frequency_Per_Week",
+    "Number_of_Night_Awakenings",
+    "Person_ID",
+    "Screen_Time_Before_Bed_Hours",
+    "Sleep_Disorder_Risk",
+    "Sleep_Duration_Hours",
+    "Sleep_Quality_Score",
+    "Sleep_Time",
+    "Wake_Up_Time",
+    "Weekend_Sleep_Difference_Hours"
+  ],
+  "outer_folds": 5,
+  "inner_folds": 4,
+  "base_model": {
+    "family": "spline_ridge",
+    "n_knots": 4,
+    "degree": 2,
+    "alpha": 1.0
+  },
+  "residual_models": [
+    "ridge",
+    "lightgbm"
+  ],
+  "blend_weights": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "control_oof_r2": 0.7906023958255962,
+  "best_model": "lightgbm_residual_w0p75",
+  "best_oof_r2": 0.7935867590718252,
+  "best_delta_vs_control_r2": 0.0029843632462289715,
+  "minimum_material_improvement": 0.001,
+  "material_improvement_achieved": true,
+  "holdout_evaluated": false
+}

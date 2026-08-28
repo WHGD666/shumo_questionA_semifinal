@@ -1,0 +1,9 @@
+[validation]
+development_fraction = 0.80
+holdout_fraction = 0.20
+cv_folds = 5
+seed = 2026
+split_unit = "Person_ID"
+holdout_policy = "sealed_one_time"
+primary_metrics = ["r2", "adjusted_r2"]
+auxiliary_metrics = ["mae", "rmse"]

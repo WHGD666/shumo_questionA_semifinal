@@ -1,0 +1,4 @@
+﻿target,dtype,missing_count,unique_count,min,max,mean,std
+Sleep_Quality_Score,float64,0,89,1.0,9.8,6.0201899999999995,1.5856893784661918
+Productivity_Score,float64,0,71,2.8,10.0,7.06533,1.147500181597666
+Health_Score,float64,0,617,27.3,100.0,74.20136000000001,12.266226729610791

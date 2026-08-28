@@ -1,0 +1,23 @@
+[experiment]
+task = "task1"
+name = "spline_proxy_validation"
+role = "scientific_comparison"
+target = "Sleep_Quality_Score"
+seed = 2026
+cv_folds = 5
+holdout_evaluated = false
+
+[model]
+n_knots = 4
+degree = 2
+alpha = 1.0
+
+[contracts.full_non_sleep]
+additional_exclusions = []
+
+[contracts.proxy_removed]
+additional_exclusions = ["Health_Score", "Fitness_Level", "Healthy_Aging_Score", "Wellness_Category"]
+
+[controls]
+full_elastic_oof_r2 = 0.7783725670589594
+strict_elastic_oof_r2 = 0.6769604021241353

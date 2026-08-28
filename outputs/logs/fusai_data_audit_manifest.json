@@ -1,0 +1,12 @@
+{
+  "data_path": "A题数据集.csv",
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "rows": 10000,
+  "columns": 64,
+  "targets": [
+    "Sleep_Quality_Score",
+    "Productivity_Score",
+    "Health_Score"
+  ],
+  "audit_status": "completed"
+}

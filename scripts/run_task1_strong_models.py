@@ -1,0 +1,18 @@
+from pathlib import Path
+import argparse
+import sys
+
+ROOT = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT))
+
+from src.task1_strong_models import run_strong_models
+
+
+if __name__ == "__main__":
+    parser = argparse.ArgumentParser(description="任务一固定强模型对照实验")
+    parser.add_argument("--overwrite", action="store_true")
+    args = parser.parse_args()
+    written = run_strong_models(ROOT, overwrite=args.overwrite)
+    print("任务一固定强模型实验完成。")
+    for path in written:
+        print(f"- {path}")

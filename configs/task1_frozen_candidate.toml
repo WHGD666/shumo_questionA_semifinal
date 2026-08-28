@@ -1,0 +1,41 @@
+[candidate]
+task = "task1"
+target = "Sleep_Quality_Score"
+status = "development_candidate_frozen"
+feature_contract = "full_non_sleep"
+feature_count = 54
+primary_metric = "oof_r2"
+selected_oof_r2 = 0.7935867590718252
+selected_oof_mae = 0.5743946660285861
+selected_oof_rmse = 0.721730891558355
+selection_run_id = "20260829T001923+0800_task1_nested_residual_1daa2d59"
+confirmation_run_id = "20260829T002532+0800_task1_residual_stability_fe7d4957"
+holdout_evaluated = false
+
+[base_model]
+family = "spline_ridge"
+n_knots = 4
+degree = 2
+alpha = 1.0
+
+[residual_model]
+family = "lightgbm"
+weight = 0.75
+n_estimators = 300
+learning_rate = 0.03
+num_leaves = 15
+min_child_samples = 30
+reg_alpha = 0.5
+reg_lambda = 2.0
+inner_folds = 4
+inner_seed = 2026
+
+[proxy_disclosure]
+permitted_composite_proxies = ["Health_Score", "Fitness_Level", "Healthy_Aging_Score", "Wellness_Category"]
+proxy_removed_oof_r2 = 0.6801783558622492
+proxy_r2_gap = 0.11042403996334704
+
+[next_gate]
+train_final_model = false
+evaluate_holdout = false
+reason = "Wait until all three task candidates are frozen before one-time holdout evaluation."
