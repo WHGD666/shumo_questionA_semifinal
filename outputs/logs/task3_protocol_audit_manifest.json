@@ -1,0 +1,54 @@
+{
+  "run_id": "20260829T233323+0800_task3_protocol_df63149f",
+  "status": "completed",
+  "task": "task3",
+  "target": "Health_Score",
+  "experiment": "task3_protocol_audit",
+  "experiment_role": "diagnostic",
+  "command": "python scripts/audit_task3_protocol.py",
+  "working_directory": "D:\\daima\\shumochuangxinbei\\fusai",
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "b5d98b56d0758315a1c226dbfc7b5d4b5f6f30eb",
+    "dirty": true
+  },
+  "feature_contracts": {
+    "competition_proxy_inclusive": 60,
+    "scientific_proxy_removed": 59
+  },
+  "deterministic_target_proxies": [
+    "Fitness_Level",
+    "Wellness_Category"
+  ],
+  "strong_composite_proxies": [
+    "Healthy_Aging_Score"
+  ],
+  "deterministic_proxy_checks": {
+    "fitness_matches_health_score_bins": true,
+    "wellness_matches_health_score_bins": true,
+    "fitness_equals_wellness": true
+  },
+  "healthy_aging_pearson_correlation": 0.9382345042475453,
+  "healthy_aging_univariate_linear_r2": 0.8802839849606362,
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "a0352b03ed6baea9a04e4d8ba3e75fef793a70e1ecd22d41e207fa041a2e4085",
+  "development_rows": 8000,
+  "sealed_holdout_rows": 2000,
+  "cv_folds": 5,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "duration_seconds": 0.3470656000000645,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0"
+  },
+  "artifact_paths": [
+    "outputs/tables/task3_feature_contract.csv",
+    "outputs/tables/task3_univariate_associations.csv",
+    "outputs/tables/task3_proxy_category_ranges.csv"
+  ]
+}

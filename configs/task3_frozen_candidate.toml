@@ -1,0 +1,50 @@
+[experiment]
+task = "task3"
+target = "Health_Score"
+status = "development_candidate_frozen"
+selection_run_id = "20260829T235336+0800_task3_additive_c92b6dee"
+confirmation_run_id = "20260829T235738+0800_task3_additive_refinement_b1e98c2f"
+holdout_evaluated = false
+
+[competition_candidate]
+feature_contract = "competition_proxy_inclusive"
+model = "additive_elastic_k4_d2_a0p003"
+penalty = "elastic"
+n_knots = 4
+degree = 2
+alpha = 0.003
+l1_ratio = 0.9
+oof_r2 = 0.9807002146476884
+fold_r2_mean = 0.9806964835223155
+fold_r2_std = 0.0007152233542139731
+oof_mae = 1.3529337096156853
+oof_rmse = 1.701476424199776
+
+[scientific_comparator]
+feature_contract = "scientific_proxy_removed"
+model = "additive_ridge_k4_d2_a0p3"
+penalty = "ridge"
+n_knots = 4
+degree = 2
+alpha = 0.3
+l1_ratio = 0.0
+oof_r2 = 0.9383925875801471
+fold_r2_mean = 0.9383381156516719
+fold_r2_std = 0.002253896884423911
+oof_mae = 2.4274974007334804
+oof_rmse = 3.0399481801299326
+
+[proxy_disclosure]
+excluded_deterministic_target_proxies = ["Fitness_Level", "Wellness_Category"]
+retained_strong_composite_proxy = "Healthy_Aging_Score"
+retained_proxy_univariate_r2 = 0.8802839849606362
+competition_minus_scientific_oof_r2 = 0.0423076270675413
+
+[stop_confirmation]
+expanded_knots = [4, 5, 6]
+best_boundary_model = "additive_elastic_k6_d2_a0p001"
+best_boundary_oof_r2 = 0.9807958453527911
+delta_vs_selected_oof_r2 = 0.00009563070510265614
+minimum_material_improvement = 0.0002
+material_improvement = false
+selection_reason = "The 6-knot gain stayed below the predeclared threshold, so the simpler 4-knot model was retained."

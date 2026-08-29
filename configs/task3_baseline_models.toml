@@ -1,0 +1,33 @@
+[experiment]
+task = "task3"
+name = "task3_health_regression_baselines"
+role = "baseline"
+target = "Health_Score"
+seed = 2026
+cv_folds = 5
+feature_contracts = ["competition_proxy_inclusive", "scientific_proxy_removed"]
+holdout_evaluated = false
+
+[feature_engineering]
+time_encoding = "sin_cos_1440_minutes"
+source_fields = ["Sleep_Time", "Wake_Up_Time"]
+drop_source_fields = true
+numeric_imputation = "median"
+categorical_imputation = "most_frequent"
+numeric_scaling = "standard"
+categorical_encoding = "one_hot_drop_first_ignore_unknown"
+
+[models]
+names = ["dummy_mean", "ordinary_least_squares", "ridge_fixed", "elastic_net_fixed", "pls_16", "extra_trees_fixed"]
+ridge_alpha = 10.0
+elastic_alpha = 0.001
+elastic_l1_ratio = 0.5
+pls_components = 16
+extra_trees_estimators = 400
+extra_trees_min_samples_leaf = 2
+
+[selection]
+primary_metric = "oof_r2"
+secondary_metrics = ["fold_r2_std", "oof_mae", "oof_rmse"]
+baseline_only = true
+no_candidate_freezing = true

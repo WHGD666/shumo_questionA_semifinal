@@ -1,0 +1,49 @@
+[experiment]
+task = "task3"
+name = "task3_health_targeted_additive_models"
+role = "controlled_structured_nonlinearity"
+target = "Health_Score"
+seed = 2026
+cv_folds = 5
+feature_contracts = ["competition_proxy_inclusive", "scientific_proxy_removed"]
+holdout_evaluated = false
+
+[feature_engineering]
+time_encoding = "sin_cos_1440_minutes"
+source_fields = ["Sleep_Time", "Wake_Up_Time"]
+drop_source_fields = true
+common_spline_features = [
+  "BMI",
+  "Weight_kg",
+  "Age",
+  "Exercise_Frequency_Per_Week",
+  "Immune_Health_Score",
+  "Protein_Intake_Grams",
+  "Sitting_Hours_Per_Day",
+  "Daily_Steps",
+  "Daily_Calorie_Intake",
+  "Water_Intake_Liters",
+  "Systolic_BP",
+]
+competition_only_spline_features = ["Healthy_Aging_Score"]
+selection_basis = "development OOF residual association diagnostic"
+
+[grid]
+n_knots = [3, 4]
+degree = [2]
+ridge_alpha = [0.3, 1.0, 3.0]
+elastic_alpha = [0.003, 0.01]
+elastic_l1_ratio = 0.9
+elastic_max_iter = 30000
+
+[controls]
+competition_proxy_inclusive_model = "elastic_a0p003_l1_0p9"
+competition_proxy_inclusive_oof_r2 = 0.9796625561007233
+scientific_proxy_removed_model = "elastic_a0p01_l1_0p9"
+scientific_proxy_removed_oof_r2 = 0.9276701162922294
+
+[selection]
+primary_metric = "oof_r2"
+tie_breakers = ["fold_r2_std", "oof_rmse", "transformed_width_max"]
+minimum_material_improvement = 0.0002
+stop_after_grid = true

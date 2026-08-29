@@ -1,0 +1,64 @@
+{
+  "run_id": "20260829T234029+0800_task3_baseline_33b2dd82",
+  "status": "completed",
+  "task": "task3",
+  "target": "Health_Score",
+  "experiment": "task3_health_regression_baselines",
+  "experiment_role": "baseline",
+  "command": "python scripts/run_task3_baselines.py",
+  "working_directory": "D:\\daima\\shumochuangxinbei\\fusai",
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "b5d98b56d0758315a1c226dbfc7b5d4b5f6f30eb",
+    "dirty": true
+  },
+  "feature_contracts": {
+    "competition_proxy_inclusive": 60,
+    "scientific_proxy_removed": 59
+  },
+  "time_encoding": "sin_cos_1440_minutes",
+  "models": [
+    "dummy_mean",
+    "ordinary_least_squares",
+    "ridge_fixed",
+    "elastic_net_fixed",
+    "pls_16",
+    "extra_trees_fixed"
+  ],
+  "primary_metric": "oof_r2",
+  "best_by_contract": {
+    "competition_proxy_inclusive": {
+      "model": "elastic_net_fixed",
+      "oof_r2": 0.9796213695740751,
+      "oof_mae": 1.3836877434620056,
+      "oof_rmse": 1.7483854878058285
+    },
+    "scientific_proxy_removed": {
+      "model": "elastic_net_fixed",
+      "oof_r2": 0.9275015979762417,
+      "oof_mae": 2.6172344807351884,
+      "oof_rmse": 3.2977210274262467
+    }
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "bf34407626c586c98f6b4bffc9d621955b16c904a2ca70ecb09a523c90db2f1a",
+  "development_rows": 8000,
+  "sealed_holdout_rows": 2000,
+  "cv_folds": 5,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "duration_seconds": 33.32275030000005,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0"
+  },
+  "artifact_paths": [
+    "outputs/tables/task3_health_regression_baselines_fold_metrics.csv",
+    "outputs/tables/task3_health_regression_baselines_summary_metrics.csv",
+    "outputs/predictions/task3_health_regression_baselines_oof_predictions.csv"
+  ]
+}

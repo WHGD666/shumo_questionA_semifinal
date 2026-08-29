@@ -1,0 +1,184 @@
+{
+  "run_id": "20260829T235336+0800_task3_additive_c92b6dee",
+  "status": "completed",
+  "task": "task3",
+  "target": "Health_Score",
+  "experiment": "task3_health_targeted_additive_models",
+  "experiment_role": "controlled_structured_nonlinearity",
+  "command": "python scripts/run_task3_additive_models.py",
+  "working_directory": "D:\\daima\\shumochuangxinbei\\fusai",
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "b5d98b56d0758315a1c226dbfc7b5d4b5f6f30eb",
+    "dirty": true
+  },
+  "feature_contracts": {
+    "competition_proxy_inclusive": 60,
+    "scientific_proxy_removed": 59
+  },
+  "time_encoding": "sin_cos_1440_minutes",
+  "spline_features": {
+    "competition_proxy_inclusive": [
+      "BMI",
+      "Weight_kg",
+      "Age",
+      "Exercise_Frequency_Per_Week",
+      "Immune_Health_Score",
+      "Protein_Intake_Grams",
+      "Sitting_Hours_Per_Day",
+      "Daily_Steps",
+      "Daily_Calorie_Intake",
+      "Water_Intake_Liters",
+      "Systolic_BP",
+      "Healthy_Aging_Score"
+    ],
+    "scientific_proxy_removed": [
+      "BMI",
+      "Weight_kg",
+      "Age",
+      "Exercise_Frequency_Per_Week",
+      "Immune_Health_Score",
+      "Protein_Intake_Grams",
+      "Sitting_Hours_Per_Day",
+      "Daily_Steps",
+      "Daily_Calorie_Intake",
+      "Water_Intake_Liters",
+      "Systolic_BP"
+    ]
+  },
+  "spline_selection_basis": "development OOF residual association diagnostic",
+  "parameter_grid": [
+    {
+      "model": "additive_ridge_k3_d2_a0p3",
+      "penalty": "ridge",
+      "n_knots": 3,
+      "degree": 2,
+      "alpha": 0.3,
+      "l1_ratio": 0.0
+    },
+    {
+      "model": "additive_ridge_k3_d2_a1",
+      "penalty": "ridge",
+      "n_knots": 3,
+      "degree": 2,
+      "alpha": 1.0,
+      "l1_ratio": 0.0
+    },
+    {
+      "model": "additive_ridge_k3_d2_a3",
+      "penalty": "ridge",
+      "n_knots": 3,
+      "degree": 2,
+      "alpha": 3.0,
+      "l1_ratio": 0.0
+    },
+    {
+      "model": "additive_elastic_k3_d2_a0p003",
+      "penalty": "elastic",
+      "n_knots": 3,
+      "degree": 2,
+      "alpha": 0.003,
+      "l1_ratio": 0.9
+    },
+    {
+      "model": "additive_elastic_k3_d2_a0p01",
+      "penalty": "elastic",
+      "n_knots": 3,
+      "degree": 2,
+      "alpha": 0.01,
+      "l1_ratio": 0.9
+    },
+    {
+      "model": "additive_ridge_k4_d2_a0p3",
+      "penalty": "ridge",
+      "n_knots": 4,
+      "degree": 2,
+      "alpha": 0.3,
+      "l1_ratio": 0.0
+    },
+    {
+      "model": "additive_ridge_k4_d2_a1",
+      "penalty": "ridge",
+      "n_knots": 4,
+      "degree": 2,
+      "alpha": 1.0,
+      "l1_ratio": 0.0
+    },
+    {
+      "model": "additive_ridge_k4_d2_a3",
+      "penalty": "ridge",
+      "n_knots": 4,
+      "degree": 2,
+      "alpha": 3.0,
+      "l1_ratio": 0.0
+    },
+    {
+      "model": "additive_elastic_k4_d2_a0p003",
+      "penalty": "elastic",
+      "n_knots": 4,
+      "degree": 2,
+      "alpha": 0.003,
+      "l1_ratio": 0.9
+    },
+    {
+      "model": "additive_elastic_k4_d2_a0p01",
+      "penalty": "elastic",
+      "n_knots": 4,
+      "degree": 2,
+      "alpha": 0.01,
+      "l1_ratio": 0.9
+    }
+  ],
+  "candidate_count_per_contract": 10,
+  "control_oof_r2": {
+    "competition_proxy_inclusive": 0.9796625561007233,
+    "scientific_proxy_removed": 0.9276701162922294
+  },
+  "minimum_material_improvement": 0.0002,
+  "best_by_contract": {
+    "competition_proxy_inclusive": {
+      "model": "additive_elastic_k4_d2_a0p003",
+      "penalty": "elastic",
+      "n_knots": 4,
+      "degree": 2,
+      "alpha": 0.003,
+      "l1_ratio": 0.9,
+      "oof_r2": 0.9807002146476884,
+      "delta_vs_linear_control_r2": 0.0010376585469651367,
+      "material_improvement": true
+    },
+    "scientific_proxy_removed": {
+      "model": "additive_ridge_k4_d2_a0p3",
+      "penalty": "ridge",
+      "n_knots": 4,
+      "degree": 2,
+      "alpha": 0.3,
+      "l1_ratio": 0.0,
+      "oof_r2": 0.9383925875801471,
+      "delta_vs_linear_control_r2": 0.010722471287917701,
+      "material_improvement": true
+    }
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "5953efc47e9deef49b4b3c4a8892cc6776ce2e20410a078fc09dbe6c213e5ce4",
+  "development_rows": 8000,
+  "sealed_holdout_rows": 2000,
+  "cv_folds": 5,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "duration_seconds": 10.49722090000023,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0"
+  },
+  "artifact_paths": [
+    "outputs/tables/task3_health_targeted_additive_models_fold_metrics.csv",
+    "outputs/tables/task3_health_targeted_additive_models_summary_metrics.csv",
+    "outputs/tables/task3_health_targeted_additive_models_winners.csv",
+    "outputs/predictions/task3_health_targeted_additive_models_oof_predictions.csv"
+  ]
+}

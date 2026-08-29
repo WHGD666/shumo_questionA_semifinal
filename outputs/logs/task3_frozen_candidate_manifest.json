@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-08-30T00:01:24.086471+08:00",
+  "task": "task3",
+  "target": "Health_Score",
+  "status": "development_candidate_frozen",
+  "candidate_config": "configs/task3_frozen_candidate.toml",
+  "candidate_config_sha256": "671b0b4c1f1b52f178a109cd05800d5b581ba5b3c8abf6b048a36b4e5757e917",
+  "selection_run_id": "20260829T235336+0800_task3_additive_c92b6dee",
+  "confirmation_run_id": "20260829T235738+0800_task3_additive_refinement_b1e98c2f",
+  "selected_model": "additive_elastic_k4_d2_a0p003",
+  "selected_feature_contract": "competition_proxy_inclusive",
+  "selected_oof_metrics": {
+    "r2": 0.9807002146476884,
+    "mae": 1.3529337096156853,
+    "rmse": 1.701476424199776,
+    "fold_r2_mean": 0.9806964835223156,
+    "fold_r2_std": 0.0007152233542139
+  },
+  "scientific_comparator": {
+    "model": "additive_ridge_k4_d2_a0p3",
+    "feature_contract": "scientific_proxy_removed",
+    "oof_r2": 0.9383925875801472,
+    "oof_mae": 2.4274974007334804,
+    "oof_rmse": 3.0399481801299326
+  },
+  "proxy_disclosure": {
+    "excluded_deterministic_target_proxies": [
+      "Fitness_Level",
+      "Wellness_Category"
+    ],
+    "retained_strong_composite_proxy": "Healthy_Aging_Score",
+    "retained_proxy_univariate_r2": 0.8802839849606362,
+    "competition_minus_scientific_oof_r2": 0.0423076270675413,
+    "deterministic_proxy_checks": {
+      "fitness_matches_health_score_bins": true,
+      "wellness_matches_health_score_bins": true,
+      "fitness_equals_wellness": true
+    }
+  },
+  "stop_confirmation": {
+    "expanded_knots": [
+      4,
+      5,
+      6
+    ],
+    "best_boundary_model": "additive_elastic_k6_d2_a0p001",
+    "best_boundary_oof_r2": 0.9807958453527911,
+    "delta_vs_selected_oof_r2": 9.563070510265614e-05,
+    "minimum_material_improvement": 0.0002,
+    "material_improvement": false,
+    "selection_reason": "The 6-knot gain stayed below the predeclared threshold, so the simpler 4-knot model was retained.",
+    "run_id": "20260829T235738+0800_task3_additive_refinement_b1e98c2f"
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "development_rows": 8000,
+  "sealed_holdout_rows": 2000,
+  "holdout_evaluated": false,
+  "final_model_trained": false,
+  "selected_oof_path": "outputs/predictions/task3_frozen_candidate_oof_predictions.csv",
+  "scientific_oof_path": "outputs/predictions/task3_frozen_scientific_comparator_oof_predictions.csv",
+  "selected_oof_sha256": "8a385a5d3a16920d0ecf35014f1cf78dae2382cf9baabb3c57cdfb7325820422",
+  "scientific_oof_sha256": "6894eb374b5b6b21984f40ea4b168aef6c49a60c6280310bddb9ebdf20d94233"
+}

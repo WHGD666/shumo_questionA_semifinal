@@ -1,0 +1,30 @@
+[experiment]
+task = "task3"
+name = "task3_health_linear_tuning"
+role = "bounded_hyperparameter_tuning"
+target = "Health_Score"
+seed = 2026
+cv_folds = 5
+feature_contracts = ["competition_proxy_inclusive", "scientific_proxy_removed"]
+holdout_evaluated = false
+
+[feature_engineering]
+time_encoding = "sin_cos_1440_minutes"
+source_fields = ["Sleep_Time", "Wake_Up_Time"]
+drop_source_fields = true
+
+[grid]
+ridge_alpha = [0.01, 0.1, 0.3, 1.0, 3.0, 10.0, 30.0]
+elastic_alpha = [0.0001, 0.0003, 0.001, 0.003, 0.01]
+elastic_l1_ratio = [0.1, 0.3, 0.5, 0.7, 0.9]
+elastic_max_iter = 20000
+
+[controls]
+competition_proxy_inclusive_oof_r2 = 0.9796213695740751
+scientific_proxy_removed_oof_r2 = 0.9275015979762417
+
+[selection]
+primary_metric = "oof_r2"
+secondary = ["fold_r2_std", "oof_mae", "oof_rmse"]
+minimum_material_improvement = 0.0002
+stop_after_this_grid = true

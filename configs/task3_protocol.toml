@@ -1,0 +1,35 @@
+[task]
+name = "task3"
+target = "Health_Score"
+problem_type = "regression"
+primary_metric = "r2"
+secondary_metrics = ["mae", "rmse"]
+id_column = "Person_ID"
+
+[validation]
+development_rows = 8000
+sealed_holdout_rows = 2000
+cv_folds = 5
+seed = 2026
+holdout_evaluated = false
+
+[feature_contracts]
+competition_proxy_inclusive = "all valid fields except Person_ID, Health_Score, Fitness_Level and Wellness_Category"
+scientific_proxy_removed = "competition_proxy_inclusive minus Healthy_Aging_Score"
+
+[leakage]
+deterministic_target_bins = ["Fitness_Level", "Wellness_Category"]
+strong_composite_proxies = ["Healthy_Aging_Score"]
+fitness_equals_wellness_expected = true
+
+[health_score_bins]
+poor_upper_exclusive = 45.0
+average_upper_exclusive = 65.0
+good_upper_exclusive = 80.0
+labels = ["Poor", "Average", "Good", "Excellent"]
+
+[audit]
+numeric_association = ["pearson_correlation", "univariate_linear_r2"]
+categorical_association = "eta_squared"
+automatic_feature_selection = false
+policy = "audit only on frozen development rows; fit preprocessing and models inside each training fold"

@@ -1,0 +1,9 @@
+﻿feature,category,sample_count,target_min,target_max,target_mean
+Fitness_Level,Poor,93,27.3,44.9,40.78709677419354
+Fitness_Level,Average,1723,45.0,64.9,58.36215902495647
+Fitness_Level,Good,3550,65.0,79.9,72.68664788732394
+Fitness_Level,Excellent,2634,80.0,100.0,87.47327258921793
+Wellness_Category,Poor,93,27.3,44.9,40.78709677419354
+Wellness_Category,Average,1723,45.0,64.9,58.36215902495647
+Wellness_Category,Good,3550,65.0,79.9,72.68664788732394
+Wellness_Category,Excellent,2634,80.0,100.0,87.47327258921793

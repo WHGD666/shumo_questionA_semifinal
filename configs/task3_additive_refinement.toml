@@ -1,0 +1,30 @@
+[experiment]
+task = "task3"
+name = "task3_health_additive_refinement"
+role = "boundary_refinement"
+target = "Health_Score"
+seed = 2026
+cv_folds = 5
+feature_contracts = ["competition_proxy_inclusive", "scientific_proxy_removed"]
+holdout_evaluated = false
+
+[grid]
+n_knots = [4, 5, 6]
+degree = 2
+competition_penalty = "elastic"
+competition_alpha = [0.001, 0.003, 0.005, 0.01]
+competition_l1_ratio = 0.9
+scientific_penalty = "ridge"
+scientific_alpha = [0.1, 0.3, 1.0, 3.0]
+
+[controls]
+competition_model = "additive_elastic_k4_d2_a0p003"
+competition_oof_r2 = 0.9807002146476884
+scientific_model = "additive_ridge_k4_d2_a0p3"
+scientific_oof_r2 = 0.9383925875801471
+
+[selection]
+primary_metric = "oof_r2"
+tie_breakers = ["fold_r2_std", "oof_rmse", "transformed_width_max"]
+minimum_material_improvement = 0.0002
+stop_after_grid = true
