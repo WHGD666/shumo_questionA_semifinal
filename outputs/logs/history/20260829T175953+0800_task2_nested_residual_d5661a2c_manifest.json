@@ -1,0 +1,65 @@
+{
+  "run_id": "20260829T175953+0800_task2_nested_residual_d5661a2c",
+  "status": "completed",
+  "task": "task2",
+  "target": "Productivity_Score",
+  "experiment": "task2_cyclic_nested_residual_correction",
+  "experiment_role": "controlled_residual_improvement",
+  "method": "outer 5-fold evaluation with inner 4-fold cross-fitted base predictions for residual targets",
+  "command": "python scripts/run_task2_residual_correction.py",
+  "working_directory": "D:\\daima\\shumochuangxinbei\\fusai",
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "8a5d224f2a18e8ebb71cc79b8699620b39fabd15",
+    "dirty": true
+  },
+  "feature_contract": "scientific_proxy_removed",
+  "source_feature_count": 58,
+  "engineered_feature_count": 60,
+  "time_encoding": "sin_cos_1440_minutes",
+  "outer_folds": 5,
+  "inner_folds": 4,
+  "base_model": {
+    "family": "elastic_net",
+    "alpha": 0.01,
+    "l1_ratio": 0.9,
+    "max_iter": 20000
+  },
+  "residual_models": [
+    "ridge",
+    "lightgbm"
+  ],
+  "blend_weights": [
+    0.25,
+    0.5,
+    0.75,
+    1.0
+  ],
+  "adjusted_r2_p_definition": "engineered raw feature count; Base_Prediction is derived from the same predictors and is not counted as a new external predictor",
+  "control_oof_adjusted_r2": 0.6201624354997604,
+  "best_model": "base_elastic",
+  "best_oof_adjusted_r2": 0.6201624354997604,
+  "best_delta_vs_control_adjusted_r2": 0.0,
+  "minimum_material_improvement": 0.001,
+  "material_improvement": false,
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "c24bb2127fe25c9910fc95cc0f29b5780ecb58d9a9269b9726e61ebdd14b762a",
+  "development_rows": 8000,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "duration_seconds": 7.831829000002472,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0",
+    "lightgbm": "4.7.0"
+  },
+  "artifact_paths": [
+    "outputs/tables/task2_cyclic_nested_residual_correction_fold_metrics.csv",
+    "outputs/tables/task2_cyclic_nested_residual_correction_summary_metrics.csv",
+    "outputs/predictions/task2_cyclic_nested_residual_correction_oof_predictions.csv"
+  ]
+}

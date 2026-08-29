@@ -1,0 +1,29 @@
+[experiment]
+task = "task2"
+name = "task2_cyclic_elastic_tuning"
+role = "bounded_hyperparameter_tuning"
+target = "Productivity_Score"
+seed = 2026
+cv_folds = 5
+feature_contracts = ["competition", "scientific_proxy_removed"]
+holdout_evaluated = false
+
+[feature_engineering]
+time_encoding = "sin_cos_1440_minutes"
+source_fields = ["Sleep_Time", "Wake_Up_Time"]
+drop_source_fields = true
+
+[grid]
+alpha = [0.0001, 0.0003, 0.001, 0.003, 0.01, 0.03]
+l1_ratio = [0.1, 0.3, 0.5, 0.7, 0.9]
+max_iter = 20000
+
+[controls]
+competition_fixed_elastic_adjusted_r2 = 0.6158906330925098
+scientific_proxy_removed_fixed_elastic_adjusted_r2 = 0.616607643898979
+
+[selection]
+primary_metric = "oof_adjusted_r2_raw"
+secondary = ["fold_adjusted_r2_raw_std", "oof_r2", "oof_mae", "oof_rmse"]
+minimum_material_improvement = 0.0005
+stop_after_this_grid = true

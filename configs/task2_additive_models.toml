@@ -1,0 +1,43 @@
+[experiment]
+task = "task2"
+name = "task2_cyclic_targeted_additive_models"
+role = "controlled_structured_nonlinearity"
+target = "Productivity_Score"
+seed = 2026
+cv_folds = 5
+feature_contract = "scientific_proxy_removed"
+holdout_evaluated = false
+
+[feature_engineering]
+time_encoding = "sin_cos_1440_minutes"
+source_fields = ["Sleep_Time", "Wake_Up_Time"]
+drop_source_fields = true
+spline_features = [
+  "Energy_Level_Score",
+  "Fatigue_Level_Score",
+  "Sleep_Quality_Score",
+  "Mood_Score",
+  "Anxiety_Score",
+  "Depression_Risk_Score",
+  "Life_Satisfaction_Score",
+  "Stress_Level",
+  "Focus_Concentration_Score",
+]
+
+[grid]
+n_knots = [3, 4, 5]
+degree = [2, 3]
+ridge_alpha = [1.0, 10.0]
+elastic_alpha = [0.003, 0.01]
+elastic_l1_ratio = 0.9
+elastic_max_iter = 30000
+
+[control]
+model = "elastic_a0p01_l1_0p9"
+oof_adjusted_r2_raw = 0.6201624354997604
+
+[selection]
+primary_metric = "oof_adjusted_r2_raw"
+tie_breakers = ["fold_adjusted_r2_raw_std", "oof_rmse", "transformed_width_max"]
+minimum_material_improvement = 0.001
+stop_after_grid = true

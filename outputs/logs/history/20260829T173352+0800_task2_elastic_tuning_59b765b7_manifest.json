@@ -1,0 +1,82 @@
+{
+  "run_id": "20260829T173352+0800_task2_elastic_tuning_59b765b7",
+  "status": "completed",
+  "task": "task2",
+  "target": "Productivity_Score",
+  "experiment": "task2_cyclic_elastic_tuning",
+  "experiment_role": "bounded_hyperparameter_tuning",
+  "command": "python scripts/run_task2_elastic_tuning.py",
+  "working_directory": "D:\\daima\\shumochuangxinbei\\fusai",
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "8a5d224f2a18e8ebb71cc79b8699620b39fabd15",
+    "dirty": true
+  },
+  "feature_contracts": {
+    "competition": 62,
+    "scientific_proxy_removed": 58
+  },
+  "time_encoding": "sin_cos_1440_minutes",
+  "grid": {
+    "alpha": [
+      0.0001,
+      0.0003,
+      0.001,
+      0.003,
+      0.01,
+      0.03
+    ],
+    "l1_ratio": [
+      0.1,
+      0.3,
+      0.5,
+      0.7,
+      0.9
+    ],
+    "candidate_count": 30
+  },
+  "control_adjusted_r2": {
+    "competition": 0.6158906330925098,
+    "scientific_proxy_removed": 0.616607643898979
+  },
+  "minimum_material_improvement": 0.0005,
+  "best_by_contract": {
+    "competition": {
+      "model": "elastic_a0p01_l1_0p9",
+      "alpha": 0.01,
+      "l1_ratio": 0.9,
+      "oof_adjusted_r2_raw": 0.6199117677866997,
+      "delta_vs_fixed_elastic": 0.004021134694189854,
+      "material_improvement": true
+    },
+    "scientific_proxy_removed": {
+      "model": "elastic_a0p01_l1_0p9",
+      "alpha": 0.01,
+      "l1_ratio": 0.9,
+      "oof_adjusted_r2_raw": 0.6201624354997604,
+      "delta_vs_fixed_elastic": 0.003554791600781315,
+      "material_improvement": true
+    }
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "35cbef5bcc73d2d0a23aaf0463680231a2ce1487c0d03832ae846571d161f5cc",
+  "development_rows": 8000,
+  "cv_folds": 5,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "duration_seconds": 30.999484699997993,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0"
+  },
+  "artifact_paths": [
+    "outputs/tables/task2_cyclic_elastic_tuning_fold_metrics.csv",
+    "outputs/tables/task2_cyclic_elastic_tuning_summary_metrics.csv",
+    "outputs/tables/task2_cyclic_elastic_tuning_winners.csv",
+    "outputs/predictions/task2_cyclic_elastic_tuning_oof_predictions.csv"
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "run_id": "20260829T172431+0800_task2_baseline_c64a3f82",
+  "status": "completed",
+  "task": "task2",
+  "target": "Productivity_Score",
+  "experiment": "task2_multicollinearity_baselines",
+  "experiment_role": "baseline",
+  "feature_contracts": {
+    "competition": 62,
+    "scientific_proxy_removed": 58
+  },
+  "models": [
+    "dummy_mean",
+    "ordinary_least_squares",
+    "ridge_fixed",
+    "elastic_net_fixed",
+    "pls_8"
+  ],
+  "primary_metric": "oof_adjusted_r2_raw",
+  "adjusted_r2_p_definition": "raw feature count in each declared contract; dummy uses p=0",
+  "transformed_width_by_contract": {
+    "competition": [
+      1054,
+      1064,
+      1068,
+      1069
+    ],
+    "scientific_proxy_removed": [
+      1046,
+      1056,
+      1060,
+      1061
+    ]
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "4e4df11d789295d73c43da2b03b4f5e9c28ac230fc730c0f3593203c470148be",
+  "development_rows": 8000,
+  "cv_folds": 5,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "duration_seconds": 22.023030099999232,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0"
+  }
+}

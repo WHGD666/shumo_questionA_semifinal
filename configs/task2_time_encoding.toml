@@ -1,0 +1,27 @@
+[experiment]
+task = "task2"
+name = "task2_cyclic_time_encoding"
+role = "controlled_feature_engineering"
+target = "Productivity_Score"
+seed = 2026
+cv_folds = 5
+feature_contracts = ["competition", "scientific_proxy_removed"]
+holdout_evaluated = false
+
+[time_encoding]
+source_fields = ["Sleep_Time", "Wake_Up_Time"]
+period_minutes = 1440
+output_per_field = ["sin", "cos"]
+drop_source_fields = true
+
+[models]
+fixed_candidates = ["ridge_fixed", "elastic_net_fixed", "pls_8"]
+
+[controls]
+competition_pls8_oof_adjusted_r2_raw = 0.6131134830550493
+scientific_proxy_removed_pls8_oof_adjusted_r2_raw = 0.6148622197297682
+
+[selection]
+primary_metric = "oof_adjusted_r2_raw"
+secondary = ["oof_r2", "oof_mae", "oof_rmse", "transformed_width_max"]
+minimum_material_improvement = 0.001

@@ -1,0 +1,34 @@
+{
+  "run_id": "20260829T172956+0800_task2_cyclic_time_af600f17",
+  "status": "completed",
+  "task": "task2",
+  "target": "Productivity_Score",
+  "experiment": "task2_cyclic_time_encoding",
+  "experiment_role": "controlled_feature_engineering",
+  "feature_contracts": {
+    "competition": 62,
+    "scientific_proxy_removed": 58
+  },
+  "time_fields": [
+    "Sleep_Time",
+    "Wake_Up_Time"
+  ],
+  "time_encoding": "sin_cos_1440_minutes",
+  "models": [
+    "ridge_fixed",
+    "elastic_net_fixed",
+    "pls_8"
+  ],
+  "control_adjusted_r2": {
+    "competition": 0.6131134830550493,
+    "scientific_proxy_removed": 0.6148622197297682
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "5a1ad012f903dd86438bbb028156164e2e0ec87dcd04b4a37bfa79e283f1fe3b",
+  "development_rows": 8000,
+  "cv_folds": 5,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "duration_seconds": 1.3966770000006363
+}

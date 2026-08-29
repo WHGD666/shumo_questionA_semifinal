@@ -1,0 +1,222 @@
+{
+  "run_id": "20260829T183308+0800_task2_kernel_22f5be57",
+  "status": "completed",
+  "task": "task2",
+  "target": "Productivity_Score",
+  "experiment": "task2_cyclic_kernel_approximation_models",
+  "experiment_role": "controlled_smooth_interactions",
+  "command": "python scripts/run_task2_kernel_models.py",
+  "working_directory": "D:\\daima\\shumochuangxinbei\\fusai",
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "8a5d224f2a18e8ebb71cc79b8699620b39fabd15",
+    "dirty": true
+  },
+  "feature_contract": "scientific_proxy_removed",
+  "source_feature_count": 58,
+  "engineered_feature_count": 60,
+  "time_encoding": "sin_cos_1440_minutes",
+  "candidate_grid": [
+    {
+      "model": "rbf_sampler_g0p001_c256_a1",
+      "family": "rbf_sampler",
+      "gamma": 0.001,
+      "kernel_components": 256,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "rbf_sampler_g0p001_c256_a10",
+      "family": "rbf_sampler",
+      "gamma": 0.001,
+      "kernel_components": 256,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "rbf_sampler_g0p001_c512_a1",
+      "family": "rbf_sampler",
+      "gamma": 0.001,
+      "kernel_components": 512,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "rbf_sampler_g0p001_c512_a10",
+      "family": "rbf_sampler",
+      "gamma": 0.001,
+      "kernel_components": 512,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "rbf_sampler_g0p003_c256_a1",
+      "family": "rbf_sampler",
+      "gamma": 0.003,
+      "kernel_components": 256,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "rbf_sampler_g0p003_c256_a10",
+      "family": "rbf_sampler",
+      "gamma": 0.003,
+      "kernel_components": 256,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "rbf_sampler_g0p003_c512_a1",
+      "family": "rbf_sampler",
+      "gamma": 0.003,
+      "kernel_components": 512,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "rbf_sampler_g0p003_c512_a10",
+      "family": "rbf_sampler",
+      "gamma": 0.003,
+      "kernel_components": 512,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "rbf_sampler_g0p01_c256_a1",
+      "family": "rbf_sampler",
+      "gamma": 0.01,
+      "kernel_components": 256,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "rbf_sampler_g0p01_c256_a10",
+      "family": "rbf_sampler",
+      "gamma": 0.01,
+      "kernel_components": 256,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "rbf_sampler_g0p01_c512_a1",
+      "family": "rbf_sampler",
+      "gamma": 0.01,
+      "kernel_components": 512,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "rbf_sampler_g0p01_c512_a10",
+      "family": "rbf_sampler",
+      "gamma": 0.01,
+      "kernel_components": 512,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "nystroem_g0p001_c128_a1",
+      "family": "nystroem",
+      "gamma": 0.001,
+      "kernel_components": 128,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "nystroem_g0p001_c128_a10",
+      "family": "nystroem",
+      "gamma": 0.001,
+      "kernel_components": 128,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "nystroem_g0p001_c256_a1",
+      "family": "nystroem",
+      "gamma": 0.001,
+      "kernel_components": 256,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "nystroem_g0p001_c256_a10",
+      "family": "nystroem",
+      "gamma": 0.001,
+      "kernel_components": 256,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "nystroem_g0p003_c128_a1",
+      "family": "nystroem",
+      "gamma": 0.003,
+      "kernel_components": 128,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "nystroem_g0p003_c128_a10",
+      "family": "nystroem",
+      "gamma": 0.003,
+      "kernel_components": 128,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "nystroem_g0p003_c256_a1",
+      "family": "nystroem",
+      "gamma": 0.003,
+      "kernel_components": 256,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "nystroem_g0p003_c256_a10",
+      "family": "nystroem",
+      "gamma": 0.003,
+      "kernel_components": 256,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "nystroem_g0p01_c128_a1",
+      "family": "nystroem",
+      "gamma": 0.01,
+      "kernel_components": 128,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "nystroem_g0p01_c128_a10",
+      "family": "nystroem",
+      "gamma": 0.01,
+      "kernel_components": 128,
+      "ridge_alpha": 10.0
+    },
+    {
+      "model": "nystroem_g0p01_c256_a1",
+      "family": "nystroem",
+      "gamma": 0.01,
+      "kernel_components": 256,
+      "ridge_alpha": 1.0
+    },
+    {
+      "model": "nystroem_g0p01_c256_a10",
+      "family": "nystroem",
+      "gamma": 0.01,
+      "kernel_components": 256,
+      "ridge_alpha": 10.0
+    }
+  ],
+  "candidate_count": 24,
+  "adjusted_r2_p_definition": "primary uses engineered raw feature count; kernel-component adjustment is diagnostic",
+  "control_oof_adjusted_r2": 0.6201624354997604,
+  "best_model": "nystroem_g0p003_c256_a1",
+  "best_family": "nystroem",
+  "best_gamma": 0.003,
+  "best_kernel_components": 256,
+  "best_ridge_alpha": 1.0,
+  "best_oof_adjusted_r2": 0.6060840555380826,
+  "best_delta_vs_control_adjusted_r2": -0.014078379961677712,
+  "minimum_material_improvement": 0.001,
+  "material_improvement": false,
+  "requires_seed_confirmation_if_promoted": true,
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "d580b2f5af738b257fbf3007ad9aa69271fc434798163f657e42b59b7c764a32",
+  "development_rows": 8000,
+  "cv_folds": 5,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "duration_seconds": 5.367063699999562,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0"
+  },
+  "artifact_paths": [
+    "outputs/tables/task2_cyclic_kernel_approximation_models_fold_metrics.csv",
+    "outputs/tables/task2_cyclic_kernel_approximation_models_summary_metrics.csv",
+    "outputs/predictions/task2_cyclic_kernel_approximation_models_oof_predictions.csv"
+  ]
+}

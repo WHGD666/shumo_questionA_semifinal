@@ -1,0 +1,126 @@
+{
+  "run_id": "20260829T182928+0800_task2_latent_factor_f7423cdb",
+  "status": "completed",
+  "task": "task2",
+  "target": "Productivity_Score",
+  "experiment": "task2_cyclic_latent_factor_models",
+  "experiment_role": "controlled_multicollinearity_structure",
+  "command": "python scripts/run_task2_latent_factor_models.py",
+  "working_directory": "D:\\daima\\shumochuangxinbei\\fusai",
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "8a5d224f2a18e8ebb71cc79b8699620b39fabd15",
+    "dirty": true
+  },
+  "feature_contract": "scientific_proxy_removed",
+  "source_feature_count": 58,
+  "engineered_feature_count": 60,
+  "time_encoding": "sin_cos_1440_minutes",
+  "candidate_grid": [
+    {
+      "model": "pls_2",
+      "family": "pls",
+      "component_count": 2
+    },
+    {
+      "model": "pls_4",
+      "family": "pls",
+      "component_count": 4
+    },
+    {
+      "model": "pls_6",
+      "family": "pls",
+      "component_count": 6
+    },
+    {
+      "model": "pls_8",
+      "family": "pls",
+      "component_count": 8
+    },
+    {
+      "model": "pls_12",
+      "family": "pls",
+      "component_count": 12
+    },
+    {
+      "model": "pls_16",
+      "family": "pls",
+      "component_count": 16
+    },
+    {
+      "model": "pls_24",
+      "family": "pls",
+      "component_count": 24
+    },
+    {
+      "model": "pls_32",
+      "family": "pls",
+      "component_count": 32
+    },
+    {
+      "model": "pcr_8",
+      "family": "pcr",
+      "component_count": 8
+    },
+    {
+      "model": "pcr_16",
+      "family": "pcr",
+      "component_count": 16
+    },
+    {
+      "model": "pcr_24",
+      "family": "pcr",
+      "component_count": 24
+    },
+    {
+      "model": "pcr_32",
+      "family": "pcr",
+      "component_count": 32
+    },
+    {
+      "model": "pcr_48",
+      "family": "pcr",
+      "component_count": 48
+    },
+    {
+      "model": "pcr_64",
+      "family": "pcr",
+      "component_count": 64
+    },
+    {
+      "model": "pcr_80",
+      "family": "pcr",
+      "component_count": 80
+    }
+  ],
+  "candidate_count": 15,
+  "adjusted_r2_p_definition": "primary uses engineered raw feature count; component-count adjustment is diagnostic",
+  "control_oof_adjusted_r2": 0.6201624354997604,
+  "best_model": "pcr_80",
+  "best_family": "pcr",
+  "best_component_count": 80,
+  "best_oof_adjusted_r2": 0.615995651952933,
+  "best_delta_vs_control_adjusted_r2": -0.004166783546827313,
+  "minimum_material_improvement": 0.001,
+  "material_improvement": false,
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "20222c7b4daaca125ebebd06ac3f1ec74fadbdddbc7a3722ed3431c3a6ea6ea1",
+  "development_rows": 8000,
+  "cv_folds": 5,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "duration_seconds": 3.5793329999978596,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0"
+  },
+  "artifact_paths": [
+    "outputs/tables/task2_cyclic_latent_factor_models_fold_metrics.csv",
+    "outputs/tables/task2_cyclic_latent_factor_models_summary_metrics.csv",
+    "outputs/predictions/task2_cyclic_latent_factor_models_oof_predictions.csv"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "run_id": "20260829T173919+0800_task2_strong_fixed_fbe8122d",
+  "status": "completed",
+  "task": "task2",
+  "target": "Productivity_Score",
+  "experiment": "task2_cyclic_strong_models_fixed",
+  "experiment_role": "controlled_model_family_comparison",
+  "command": "python scripts/run_task2_strong_models.py",
+  "working_directory": "D:\\daima\\shumochuangxinbei\\fusai",
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "8a5d224f2a18e8ebb71cc79b8699620b39fabd15",
+    "dirty": true
+  },
+  "feature_contracts": {
+    "competition": 62,
+    "scientific_proxy_removed": 58
+  },
+  "time_encoding": "sin_cos_1440_minutes",
+  "models": {
+    "lightgbm_fixed": {
+      "boosting_type": "gbdt",
+      "class_weight": null,
+      "colsample_bytree": 0.9,
+      "importance_type": "split",
+      "learning_rate": 0.03,
+      "max_depth": -1,
+      "min_child_samples": 30,
+      "min_child_weight": 0.001,
+      "min_split_gain": 0.0,
+      "n_estimators": 500,
+      "n_jobs": -1,
+      "num_leaves": 31,
+      "objective": null,
+      "random_state": 2026,
+      "reg_alpha": 0.1,
+      "reg_lambda": 1.0,
+      "subsample": 0.9,
+      "subsample_for_bin": 200000,
+      "subsample_freq": 0,
+      "verbosity": -1
+    },
+    "catboost_fixed": {
+      "iterations": 500,
+      "learning_rate": 0.03,
+      "depth": 6,
+      "l2_leaf_reg": 5.0,
+      "loss_function": "RMSE",
+      "random_seed": 2026,
+      "verbose": false,
+      "allow_writing_files": false
+    }
+  },
+  "control_adjusted_r2": {
+    "competition": 0.6199117677866997,
+    "scientific_proxy_removed": 0.6201624354997604
+  },
+  "minimum_material_improvement": 0.001,
+  "best_contract": "scientific_proxy_removed",
+  "best_model": "catboost_fixed",
+  "best_oof_adjusted_r2_raw": 0.6039500327254809,
+  "best_delta_vs_tuned_elastic": -0.01621240277427949,
+  "material_improvement": false,
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "f665f16dde0cf5fa78e6dd7ab361df95a39c8f19baf61f8c6bcec53c4fca1bbb",
+  "development_rows": 8000,
+  "cv_folds": 5,
+  "seed": 2026,
+  "holdout_evaluated": false,
+  "duration_seconds": 34.94572409999819,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0",
+    "lightgbm": "4.7.0",
+    "catboost": "1.2.10"
+  },
+  "artifact_paths": [
+    "outputs/tables/task2_cyclic_strong_models_fixed_fold_metrics.csv",
+    "outputs/tables/task2_cyclic_strong_models_fixed_summary_metrics.csv",
+    "outputs/predictions/task2_cyclic_strong_models_fixed_oof_predictions.csv"
+  ]
+}

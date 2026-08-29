@@ -1,0 +1,36 @@
+[task]
+name = "task2"
+target = "Productivity_Score"
+problem_type = "regression"
+primary_metric = "adjusted_r2_raw_feature_count"
+secondary_metrics = ["r2", "mae", "rmse", "adjusted_r2_transformed_width"]
+id_column = "Person_ID"
+forbidden = ["Person_ID", "Productivity_Score"]
+
+[validation]
+development_rows = 8000
+sealed_holdout_rows = 2000
+cv_folds = 5
+seed = 2026
+holdout_evaluated = false
+
+[adjusted_r2]
+formula = "1 - (1 - r2) * (n - 1) / (n - p - 1)"
+primary_p_definition = "number of raw predictors in the declared feature contract"
+diagnostic_p_definition = "transformed design width when mathematically meaningful"
+require_n_greater_than_p_plus_one = true
+
+[feature_contracts]
+competition = "all rules-permitted fields except Person_ID and Productivity_Score"
+scientific_proxy_removed = "competition contract minus disclosed composite health proxies"
+
+[proxy_disclosure]
+composite_proxies = ["Health_Score", "Fitness_Level", "Healthy_Aging_Score", "Wellness_Category"]
+substantive_high_signal_drivers = ["Energy_Level_Score", "Fatigue_Level_Score", "Mood_Score", "Sleep_Quality_Score", "Anxiety_Score", "Depression_Risk_Score", "Life_Satisfaction_Score", "Stress_Level", "Focus_Concentration_Score"]
+
+[collinearity]
+numeric_pair_threshold = 0.8
+vif_attention_threshold = 5.0
+vif_high_threshold = 10.0
+automatic_feature_removal = false
+policy = "diagnose on development data; use regularization or fold-local dimension reduction before removing substantive drivers"

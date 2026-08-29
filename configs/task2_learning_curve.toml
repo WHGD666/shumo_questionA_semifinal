@@ -1,0 +1,30 @@
+[experiment]
+task = "task2"
+name = "task2_cyclic_elastic_learning_curve"
+role = "diagnostic_learning_curve"
+target = "Productivity_Score"
+seed = 2026
+cv_folds = 5
+feature_contract = "scientific_proxy_removed"
+holdout_evaluated = false
+
+[frozen_candidate]
+model = "elastic_a0p01_l1_0p9"
+alpha = 0.01
+l1_ratio = 0.9
+max_iter = 20000
+time_encoding = "sin_cos_1440_minutes"
+control_oof_adjusted_r2_raw = 0.6201624354997604
+control_oof_r2 = 0.6230115733757466
+
+[learning_curve]
+training_fractions = [0.2, 0.4, 0.6, 0.8, 1.0]
+subsample_seeds = [2026, 2037, 2048, 2059, 2070]
+nested_subsamples = true
+validation_folds = "frozen_outer_five_fold"
+
+[diagnosis]
+maximum_plateau_gain_80_to_100 = 0.005
+maximum_full_train_validation_r2_gap = 0.03
+selection_or_tuning_allowed = false
+stop_after_this_diagnostic = true

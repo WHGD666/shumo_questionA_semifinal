@@ -1,0 +1,32 @@
+[experiment]
+task = "task2"
+name = "task2_cyclic_kernel_approximation_models"
+role = "controlled_smooth_interactions"
+target = "Productivity_Score"
+seed = 2026
+cv_folds = 5
+feature_contract = "scientific_proxy_removed"
+holdout_evaluated = false
+
+[feature_engineering]
+time_encoding = "sin_cos_1440_minutes"
+source_fields = ["Sleep_Time", "Wake_Up_Time"]
+drop_source_fields = true
+
+[kernel]
+families = ["rbf_sampler", "nystroem"]
+gamma = [0.001, 0.003, 0.01]
+rbf_components = [256, 512]
+nystroem_components = [128, 256]
+ridge_alpha = [1.0, 10.0]
+
+[control]
+model = "elastic_a0p01_l1_0p9"
+oof_adjusted_r2_raw = 0.6201624354997604
+
+[selection]
+primary_metric = "oof_adjusted_r2_raw"
+tie_breakers = ["fold_adjusted_r2_raw_std", "oof_rmse", "kernel_components"]
+minimum_material_improvement = 0.001
+require_seed_confirmation_if_promoted = true
+stop_after_grid = true

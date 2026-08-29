@@ -1,0 +1,42 @@
+[experiment]
+task = "task2"
+name = "task2_cyclic_nested_residual_correction"
+role = "controlled_residual_improvement"
+target = "Productivity_Score"
+seed = 2026
+outer_folds = 5
+inner_folds = 4
+feature_contract = "scientific_proxy_removed"
+holdout_evaluated = false
+
+[feature_engineering]
+time_encoding = "sin_cos_1440_minutes"
+source_fields = ["Sleep_Time", "Wake_Up_Time"]
+drop_source_fields = true
+
+[base_model]
+family = "elastic_net"
+alpha = 0.01
+l1_ratio = 0.9
+max_iter = 20000
+control_oof_adjusted_r2 = 0.6201624354997604
+
+[residual_models.ridge]
+alpha = 10.0
+
+[residual_models.lightgbm]
+n_estimators = 300
+learning_rate = 0.03
+num_leaves = 15
+min_child_samples = 30
+reg_alpha = 0.5
+reg_lambda = 2.0
+
+[blend]
+weights = [0.25, 0.5, 0.75, 1.0]
+
+[selection]
+primary_metric = "oof_adjusted_r2_raw"
+tie_breakers = ["fold_adjusted_r2_raw_std", "oof_rmse"]
+minimum_material_improvement = 0.001
+stop_if_not_improved = true

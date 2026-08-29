@@ -1,0 +1,59 @@
+{
+  "created_at": "2026-08-29T19:08:06.018200+08:00",
+  "task": "task2",
+  "target": "Productivity_Score",
+  "status": "development_candidate_frozen",
+  "candidate_config": "configs/task2_frozen_candidate.toml",
+  "candidate_config_sha256": "412df7b01ff605667d0dfbd0093b548e33e277b7da7458254e68dfb83dc5d545",
+  "selection_run_id": "20260829T173352+0800_task2_elastic_tuning_59b765b7",
+  "confirmation_run_id": "20260829T190021+0800_task2_learning_curve_3d139646",
+  "selected_model": "elastic_a0p01_l1_0p9",
+  "selected_feature_contract": "scientific_proxy_removed",
+  "selected_oof_metrics": {
+    "adjusted_r2_raw": 0.6201624354997604,
+    "r2": 0.6230115733757466,
+    "mae": 0.559852657967001,
+    "rmse": 0.7030530944052009
+  },
+  "proxy_disclosure": {
+    "removed_composite_proxies": [
+      "Health_Score",
+      "Fitness_Level",
+      "Healthy_Aging_Score",
+      "Wellness_Category"
+    ],
+    "competition_oof_adjusted_r2_raw": 0.6199117677866997,
+    "competition_oof_r2": 0.6229528537801553,
+    "proxy_removed_minus_competition_adjusted_r2": 0.0002506677130607031,
+    "proxy_removed_minus_competition_r2": 5.871959559133888e-05,
+    "competition_contract_model": "elastic_a0p01_l1_0p9"
+  },
+  "learning_curve_confirmation": {
+    "training_fractions": [
+      0.2,
+      0.4,
+      0.6,
+      0.8,
+      1.0
+    ],
+    "subsample_seeds": [
+      2026,
+      2037,
+      2048,
+      2059,
+      2070
+    ],
+    "gain_oof_r2_80_to_100": 0.00040973656646514645,
+    "full_train_validation_r2_gap": 0.003368897790395415,
+    "practical_plateau_supported": true,
+    "run_id": "20260829T190021+0800_task2_learning_curve_3d139646"
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "development_rows": 8000,
+  "sealed_holdout_rows": 2000,
+  "holdout_evaluated": false,
+  "final_model_trained": false,
+  "selected_oof_path": "outputs/predictions/task2_frozen_candidate_oof_predictions.csv",
+  "selected_oof_sha256": "56ad24981aa7c8964c403ff25451a710e63d4c75a87788b9732a989168576707"
+}

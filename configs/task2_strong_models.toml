@@ -1,0 +1,44 @@
+[experiment]
+task = "task2"
+name = "task2_cyclic_strong_models_fixed"
+role = "controlled_model_family_comparison"
+target = "Productivity_Score"
+seed = 2026
+cv_folds = 5
+feature_contracts = ["competition", "scientific_proxy_removed"]
+holdout_evaluated = false
+
+[feature_engineering]
+time_encoding = "sin_cos_1440_minutes"
+source_fields = ["Sleep_Time", "Wake_Up_Time"]
+drop_source_fields = true
+
+[lightgbm]
+n_estimators = 500
+learning_rate = 0.03
+num_leaves = 31
+max_depth = -1
+min_child_samples = 30
+subsample = 0.9
+colsample_bytree = 0.9
+reg_alpha = 0.1
+reg_lambda = 1.0
+
+[catboost]
+iterations = 500
+learning_rate = 0.03
+depth = 6
+l2_leaf_reg = 5.0
+loss_function = "RMSE"
+
+[controls]
+competition_model = "elastic_a0p01_l1_0p9"
+competition_adjusted_r2 = 0.6199117677866997
+scientific_proxy_removed_model = "elastic_a0p01_l1_0p9"
+scientific_proxy_removed_adjusted_r2 = 0.6201624354997604
+
+[selection]
+primary_metric = "oof_adjusted_r2_raw"
+secondary = ["fold_adjusted_r2_raw_std", "oof_r2", "oof_mae", "oof_rmse"]
+minimum_material_improvement = 0.001
+no_hyperparameter_tuning = true

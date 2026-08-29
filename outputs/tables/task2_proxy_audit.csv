@@ -1,0 +1,14 @@
+﻿feature,role,dtype,pearson_correlation,absolute_correlation,association_type,association_strength,exact_target_match,competition_contract,proxy_removed_contract
+Energy_Level_Score,substantive_driver,float64,0.6010301765643621,0.6010301765643621,univariate_linear_r2,0.36123727314098797,False,True,True
+Fatigue_Level_Score,substantive_driver,float64,-0.5432095676237267,0.5432095676237267,univariate_linear_r2,0.29507663435795606,False,True,True
+Health_Score,disclosed_composite_proxy,float64,0.5175844587968914,0.5175844587968914,univariate_linear_r2,0.2678936719880707,False,True,False
+Sleep_Quality_Score,substantive_driver,float64,0.515556818513185,0.515556818513185,univariate_linear_r2,0.26579883311543684,False,True,True
+Mood_Score,substantive_driver,float64,0.514345251070986,0.514345251070986,univariate_linear_r2,0.26455103729927554,False,True,True
+Anxiety_Score,substantive_driver,float64,-0.47270228120540675,0.47270228120540675,univariate_linear_r2,0.22344744665679517,False,True,True
+Fitness_Level,disclosed_composite_proxy,str,,,eta_squared,0.22027994405025228,False,True,False
+Wellness_Category,disclosed_composite_proxy,str,,,eta_squared,0.22027994405025228,False,True,False
+Depression_Risk_Score,substantive_driver,float64,-0.4535290793095996,0.4535290793095996,univariate_linear_r2,0.2056886257794136,False,True,True
+Healthy_Aging_Score,disclosed_composite_proxy,float64,0.44755434249704656,0.44755434249704656,univariate_linear_r2,0.20030488948796343,False,True,False
+Life_Satisfaction_Score,substantive_driver,float64,0.42409471611637595,0.42409471611637595,univariate_linear_r2,0.17985632823782927,False,True,True
+Stress_Level,substantive_driver,float64,-0.4139582049140002,0.4139582049140002,univariate_linear_r2,0.1713613954156209,False,True,True
+Focus_Concentration_Score,substantive_driver,float64,0.3346747606016915,0.3346747606016915,univariate_linear_r2,0.11200719538379944,False,True,True

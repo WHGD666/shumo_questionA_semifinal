@@ -14,7 +14,7 @@ diagnostic_only = ["Health_Score", "Fitness_Level", "Healthy_Aging_Score", "Well
 target = "Productivity_Score"
 primary_metric = "adjusted_r2"
 forbidden = ["Person_ID", "Productivity_Score"]
-diagnostic_only = ["Health_Score", "Fitness_Level", "Wellness_Category"]
+diagnostic_only = ["Health_Score", "Fitness_Level", "Healthy_Aging_Score", "Wellness_Category"]
 collinearity_candidates = ["Energy_Level_Score", "Fatigue_Level_Score", "Focus_Concentration_Score", "Mood_Score", "Life_Satisfaction_Score", "Stress_Level", "Anxiety_Score", "Depression_Risk_Score"]
 
 [task3]

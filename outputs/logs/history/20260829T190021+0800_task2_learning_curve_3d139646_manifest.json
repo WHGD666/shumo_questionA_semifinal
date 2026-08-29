@@ -1,0 +1,68 @@
+{
+  "run_id": "20260829T190021+0800_task2_learning_curve_3d139646",
+  "status": "completed",
+  "task": "task2",
+  "target": "Productivity_Score",
+  "experiment": "task2_cyclic_elastic_learning_curve",
+  "experiment_role": "diagnostic_learning_curve",
+  "command": "python scripts/run_task2_learning_curve.py",
+  "working_directory": "D:\\daima\\shumochuangxinbei\\fusai",
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "8a5d224f2a18e8ebb71cc79b8699620b39fabd15",
+    "dirty": true
+  },
+  "feature_contract": "scientific_proxy_removed",
+  "source_feature_count": 58,
+  "engineered_feature_count": 60,
+  "frozen_candidate": {
+    "model": "elastic_a0p01_l1_0p9",
+    "alpha": 0.01,
+    "l1_ratio": 0.9,
+    "control_oof_adjusted_r2_raw": 0.6201624354997604,
+    "control_oof_r2": 0.6230115733757466
+  },
+  "training_fractions": [
+    0.2,
+    0.4,
+    0.6,
+    0.8,
+    1.0
+  ],
+  "subsample_seeds": [
+    2026,
+    2037,
+    2048,
+    2059,
+    2070
+  ],
+  "nested_subsamples": true,
+  "selection_or_tuning_allowed": false,
+  "diagnosis": {
+    "gain_oof_r2_80_to_100": 0.00040973656646514645,
+    "full_train_validation_r2_gap": 0.003368897790395415,
+    "maximum_plateau_gain_80_to_100": 0.005,
+    "maximum_full_train_validation_r2_gap": 0.03,
+    "practical_plateau_supported": true
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "config_sha256": "00c05c621858f0e48697470a606bf9ea419bd4d168431fc8920bd97448812a8d",
+  "development_rows": 8000,
+  "cv_folds": 5,
+  "holdout_evaluated": false,
+  "duration_seconds": 11.12620969999989,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0",
+  "dependencies": {
+    "numpy": "2.3.5",
+    "pandas": "3.0.1",
+    "scikit_learn": "1.9.0"
+  },
+  "artifact_paths": [
+    "outputs/tables/task2_cyclic_elastic_learning_curve_fold_metrics.csv",
+    "outputs/tables/task2_cyclic_elastic_learning_curve_repeat_metrics.csv",
+    "outputs/tables/task2_cyclic_elastic_learning_curve_aggregate.csv",
+    "outputs/predictions/task2_cyclic_elastic_learning_curve_oof_predictions.csv"
+  ]
+}

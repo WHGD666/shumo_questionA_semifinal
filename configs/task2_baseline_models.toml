@@ -1,0 +1,38 @@
+[experiment]
+task = "task2"
+name = "task2_multicollinearity_baselines"
+role = "baseline"
+target = "Productivity_Score"
+seed = 2026
+cv_folds = 5
+feature_contracts = ["competition", "scientific_proxy_removed"]
+holdout_evaluated = false
+
+[metrics]
+primary = "oof_adjusted_r2_raw"
+secondary = ["oof_r2", "oof_mae", "oof_rmse", "fold_adjusted_r2_raw_mean", "oof_adjusted_r2_transformed"]
+
+[models.dummy_mean]
+family = "dummy"
+
+[models.ordinary_least_squares]
+family = "linear_regression"
+
+[models.ridge_fixed]
+family = "ridge"
+alpha = 10.0
+
+[models.elastic_net_fixed]
+family = "elastic_net"
+alpha = 0.001
+l1_ratio = 0.5
+max_iter = 10000
+
+[models.pls_8]
+family = "partial_least_squares"
+n_components = 8
+scale = false
+
+[selection]
+do_not_freeze_final_candidate = true
+next_step = "bounded regularization and component tuning after baseline review"

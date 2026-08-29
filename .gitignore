@@ -30,6 +30,7 @@ submission/model/*.joblib
 # Bulk reproducible predictions: retain only the frozen Task 1 candidate OOF evidence
 outputs/predictions/*
 !outputs/predictions/task1_non_sleep_nested_residual_correction_oof_predictions.csv
+!outputs/predictions/task2_frozen_candidate_oof_predictions.csv
 
 # Local scratch and temporary files
 *.tmp

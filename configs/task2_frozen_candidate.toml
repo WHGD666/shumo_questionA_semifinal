@@ -1,0 +1,52 @@
+[candidate]
+task = "task2"
+target = "Productivity_Score"
+status = "development_candidate_frozen"
+feature_contract = "scientific_proxy_removed"
+source_feature_count = 58
+engineered_feature_count = 60
+primary_metric = "oof_adjusted_r2_raw"
+selected_oof_adjusted_r2_raw = 0.6201624354997604
+selected_oof_r2 = 0.6230115733757466
+selected_oof_mae = 0.559852657967001
+selected_oof_rmse = 0.7030530944052009
+fold_adjusted_r2_raw_mean = 0.6078820409434388
+fold_adjusted_r2_raw_std = 0.010068100467095343
+selection_run_id = "20260829T173352+0800_task2_elastic_tuning_59b765b7"
+confirmation_run_id = "20260829T190021+0800_task2_learning_curve_3d139646"
+holdout_evaluated = false
+
+[feature_engineering]
+numeric_imputation = "median"
+numeric_scaling = "standard"
+categorical_imputation = "most_frequent"
+categorical_encoding = "one_hot_drop_first_ignore_unknown"
+time_encoding = "sin_cos_1440_minutes"
+time_source_fields = ["Sleep_Time", "Wake_Up_Time"]
+drop_raw_time_fields = true
+
+[model]
+family = "elastic_net"
+alpha = 0.01
+l1_ratio = 0.9
+max_iter = 20000
+seed = 2026
+
+[proxy_disclosure]
+removed_composite_proxies = ["Health_Score", "Fitness_Level", "Healthy_Aging_Score", "Wellness_Category"]
+competition_oof_adjusted_r2_raw = 0.6199117677866997
+competition_oof_r2 = 0.6229528537801553
+proxy_removed_minus_competition_adjusted_r2 = 0.0002506677130607031
+proxy_removed_minus_competition_r2 = 0.00005871959559133888
+
+[learning_curve_confirmation]
+training_fractions = [0.2, 0.4, 0.6, 0.8, 1.0]
+subsample_seeds = [2026, 2037, 2048, 2059, 2070]
+gain_oof_r2_80_to_100 = 0.00040973656646514645
+full_train_validation_r2_gap = 0.003368897790395415
+practical_plateau_supported = true
+
+[next_gate]
+train_final_model = false
+evaluate_holdout = false
+reason = "Wait until all three task candidates are frozen before one-time holdout evaluation."

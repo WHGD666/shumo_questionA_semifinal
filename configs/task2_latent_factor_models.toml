@@ -1,0 +1,33 @@
+[experiment]
+task = "task2"
+name = "task2_cyclic_latent_factor_models"
+role = "controlled_multicollinearity_structure"
+target = "Productivity_Score"
+seed = 2026
+cv_folds = 5
+feature_contract = "scientific_proxy_removed"
+holdout_evaluated = false
+
+[feature_engineering]
+time_encoding = "sin_cos_1440_minutes"
+source_fields = ["Sleep_Time", "Wake_Up_Time"]
+drop_source_fields = true
+
+[pls]
+n_components = [2, 4, 6, 8, 12, 16, 24, 32]
+scale = false
+max_iter = 2000
+
+[pcr]
+n_components = [8, 16, 24, 32, 48, 64, 80]
+ridge_alpha = 10.0
+
+[control]
+model = "elastic_a0p01_l1_0p9"
+oof_adjusted_r2_raw = 0.6201624354997604
+
+[selection]
+primary_metric = "oof_adjusted_r2_raw"
+tie_breakers = ["fold_adjusted_r2_raw_std", "oof_rmse", "component_count"]
+minimum_material_improvement = 0.001
+stop_after_grid = true
