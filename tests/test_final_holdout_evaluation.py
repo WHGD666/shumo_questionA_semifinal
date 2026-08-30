@@ -112,7 +112,19 @@ class FinalHoldoutEvaluationTests(unittest.TestCase):
                 row = regression_metric_row(task, truth, prediction, 4)
                 self.assertEqual(row["primary_metric"], "r2")
                 self.assertEqual(row["primary_value"], row["r2"])
-                self.assertTrue(np.isnan(row["adjusted_r2_raw"]))
+                self.assertIsNone(row["adjusted_r2_raw"])
+
+    def test_final_holdout_manifests_are_strict_json(self):
+        def reject_nonstandard_constant(value: str):
+            raise ValueError(f"non-standard JSON constant: {value}")
+
+        current = ROOT / "outputs" / "logs" / "final_holdout_evaluation_manifest.json"
+        marker = ROOT / "outputs" / "logs" / "final_holdout_consumed.json"
+        for path in (current, marker):
+            json.loads(
+                path.read_text(encoding="utf-8"),
+                parse_constant=reject_nonstandard_constant,
+            )
 
     def test_prediction_and_metric_consistency_is_recomputed(self):
         ids = pd.Series(["P1", "P2", "P3", "P4"])

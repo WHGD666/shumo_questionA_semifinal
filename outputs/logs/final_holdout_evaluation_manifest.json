@@ -36,7 +36,7 @@
         "primary_metric": "r2",
         "primary_value": 0.7949398353782626,
         "r2": 0.7949398353782626,
-        "adjusted_r2_raw": NaN,
+        "adjusted_r2_raw": null,
         "mae": 0.5683530964235819,
         "rmse": 0.7122347471693622,
         "official_hidden_test_score": false
@@ -80,7 +80,7 @@
         "primary_metric": "r2",
         "primary_value": 0.9807472931681148,
         "r2": 0.9807472931681148,
-        "adjusted_r2_raw": NaN,
+        "adjusted_r2_raw": null,
         "mae": 1.365842647342104,
         "rmse": 1.7107111092392504,
         "official_hidden_test_score": false

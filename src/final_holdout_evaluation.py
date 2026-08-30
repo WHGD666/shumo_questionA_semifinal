@@ -170,7 +170,7 @@ def regression_metric_row(
     r2 = float(r2_score(truth, prediction))
     mae = float(mean_absolute_error(truth, prediction))
     rmse = float(mean_squared_error(truth, prediction) ** 0.5)
-    adjusted = np.nan
+    adjusted = None
     primary_metric = "r2"
     primary_value = r2
     if task == "task2":
@@ -230,7 +230,7 @@ def validate_task_output_consistency(
             raise ValueError(f"{task}留出集指标{name}与预测文件不一致")
     expected_adjusted = recalculated["adjusted_r2_raw"]
     actual_adjusted = metric_row["adjusted_r2_raw"]
-    if np.isnan(expected_adjusted):
+    if pd.isna(expected_adjusted):
         if not pd.isna(actual_adjusted):
             raise ValueError(f"{task}不应保存调整R²")
     elif not np.isclose(
@@ -375,7 +375,12 @@ def evaluate_final_holdout(root: Path, confirmation: str) -> list[Path]:
         "tasks": task_records,
         "duration_seconds": time.perf_counter() - started,
     }
-    manifest_text = json.dumps(manifest, ensure_ascii=False, indent=2)
+    manifest_text = json.dumps(
+        manifest,
+        ensure_ascii=False,
+        indent=2,
+        allow_nan=False,
+    )
     paths["manifest"].parent.mkdir(parents=True, exist_ok=True)
     paths["manifest"].write_text(manifest_text, encoding="utf-8")
     history_path = (
@@ -397,7 +402,7 @@ def evaluate_final_holdout(root: Path, confirmation: str) -> list[Path]:
         "repeat_evaluation_allowed": False,
     }
     paths["consumed_marker"].write_text(
-        json.dumps(marker, ensure_ascii=False, indent=2),
+        json.dumps(marker, ensure_ascii=False, indent=2, allow_nan=False),
         encoding="utf-8",
     )
     written.append(paths["consumed_marker"])
