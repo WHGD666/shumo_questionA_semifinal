@@ -1,0 +1,4 @@
+task,target,evaluation_role,sample_count,raw_predictor_count,primary_metric,primary_value,r2,adjusted_r2_raw,mae,rmse,official_hidden_test_score
+task1,Sleep_Quality_Score,internal_frozen_holdout,2000,54,r2,0.7949398353782626,0.7949398353782626,,0.5683530964235819,0.7122347471693622,False
+task2,Productivity_Score,internal_frozen_holdout,2000,58,adjusted_r2_raw,0.6073134996733385,0.6187071049854678,0.6073134996733385,0.5743378861192016,0.7143020684036869,False
+task3,Health_Score,internal_frozen_holdout,2000,60,r2,0.9807472931681148,0.9807472931681148,,1.3658426473421041,1.7107111092392504,False

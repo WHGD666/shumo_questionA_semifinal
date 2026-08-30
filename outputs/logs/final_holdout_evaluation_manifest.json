@@ -1,0 +1,92 @@
+{
+  "run_id": "20260830T115206+0800_final_holdout_7abae5b7",
+  "status": "completed",
+  "experiment": "one_time_final_internal_holdout_evaluation",
+  "experiment_role": "final_internal_holdout",
+  "official_hidden_test_score": false,
+  "confirmation_verified": true,
+  "confirmation_token_stored": false,
+  "holdout_evaluated": true,
+  "holdout_consumed": true,
+  "holdout_rows": 2000,
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "2d6cbafd7c83ee9eb24425f1f3daff061dde1a27",
+    "dirty": false
+  },
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "protocol_sha256": "0d371f3d9fb274a4fa74c3b727efe148eae09d18f0f5bef531f1f7c5957ab84e",
+  "evaluation_config_sha256": "5d804b18c89b0b8e0fea1a70f0fe2294881b5ba6ace7a2315d3dfe77df9a713d",
+  "metrics_path": "outputs/tables/final_holdout_metrics.csv",
+  "metrics_sha256": "ecad46f73fcf5bda4bb54783df2d5b587b11f3ffe45b94fd1e730d83184507e7",
+  "tasks": {
+    "task1": {
+      "target": "Sleep_Quality_Score",
+      "selected_model": "lightgbm_residual_w0p75",
+      "model_sha256": "010aefc910205e5d9f88ff5327ecb8958eac9b1d34c3fa0114a07b1360c74efa",
+      "model_training_manifest": "outputs/logs/task1_evaluation_model_manifest.json",
+      "prediction_path": "outputs/predictions/task1_final_holdout_predictions.csv",
+      "metrics": {
+        "task": "task1",
+        "target": "Sleep_Quality_Score",
+        "evaluation_role": "internal_frozen_holdout",
+        "sample_count": 2000,
+        "raw_predictor_count": 54,
+        "primary_metric": "r2",
+        "primary_value": 0.7949398353782626,
+        "r2": 0.7949398353782626,
+        "adjusted_r2_raw": NaN,
+        "mae": 0.5683530964235819,
+        "rmse": 0.7122347471693622,
+        "official_hidden_test_score": false
+      },
+      "prediction_sha256": "889d8b5773147598f8f09df2fdeb41199b43ba875570237b660e3540b62fcd52"
+    },
+    "task2": {
+      "target": "Productivity_Score",
+      "selected_model": "elastic_a0p01_l1_0p9",
+      "model_sha256": "d09226bd2e784e2d90703bdc444a7c18cb73349ef6a06fb9c74f9126bdbb9858",
+      "model_training_manifest": "outputs/logs/task2_evaluation_model_manifest.json",
+      "prediction_path": "outputs/predictions/task2_final_holdout_predictions.csv",
+      "metrics": {
+        "task": "task2",
+        "target": "Productivity_Score",
+        "evaluation_role": "internal_frozen_holdout",
+        "sample_count": 2000,
+        "raw_predictor_count": 58,
+        "primary_metric": "adjusted_r2_raw",
+        "primary_value": 0.6073134996733385,
+        "r2": 0.6187071049854678,
+        "adjusted_r2_raw": 0.6073134996733385,
+        "mae": 0.5743378861192016,
+        "rmse": 0.7143020684036869,
+        "official_hidden_test_score": false
+      },
+      "prediction_sha256": "f640e18355e2e13086af08519eb84c7ae0c5a9d4107598d4749d278ac07d4e7c"
+    },
+    "task3": {
+      "target": "Health_Score",
+      "selected_model": "additive_elastic_k4_d2_a0p003",
+      "model_sha256": "82fbcfb18522f977402b0d705be22c60d3b07f3fb5d43d1dd634a1a897fd12a8",
+      "model_training_manifest": "outputs/logs/task3_evaluation_model_manifest.json",
+      "prediction_path": "outputs/predictions/task3_final_holdout_predictions.csv",
+      "metrics": {
+        "task": "task3",
+        "target": "Health_Score",
+        "evaluation_role": "internal_frozen_holdout",
+        "sample_count": 2000,
+        "raw_predictor_count": 60,
+        "primary_metric": "r2",
+        "primary_value": 0.9807472931681148,
+        "r2": 0.9807472931681148,
+        "adjusted_r2_raw": NaN,
+        "mae": 1.365842647342104,
+        "rmse": 1.7107111092392504,
+        "official_hidden_test_score": false
+      },
+      "prediction_sha256": "4ce79a1c64f56b214a2dddffbf83437c44037a657506644e2c3039e4c2ea7053"
+    }
+  },
+  "duration_seconds": 0.4302133999999569
+}

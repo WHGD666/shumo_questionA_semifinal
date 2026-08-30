@@ -1,0 +1,9 @@
+{
+  "status": "consumed",
+  "holdout_consumed": true,
+  "run_id": "20260830T115206+0800_final_holdout_7abae5b7",
+  "consumed_at": "2026-08-30T11:52:06.141024+08:00",
+  "evaluation_manifest": "outputs/logs/final_holdout_evaluation_manifest.json",
+  "evaluation_manifest_sha256": "50a03f30c50f66f8195d70af4cfe3e725d6f9742d1115801ed77bf3d6faeba47",
+  "repeat_evaluation_allowed": false
+}
