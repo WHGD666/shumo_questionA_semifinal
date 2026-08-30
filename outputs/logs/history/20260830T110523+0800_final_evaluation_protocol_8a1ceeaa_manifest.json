@@ -1,0 +1,70 @@
+{
+  "run_id": "20260830T110523+0800_final_evaluation_protocol_8a1ceeaa",
+  "status": "completed",
+  "experiment": "final_evaluation_protocol_audit",
+  "experiment_role": "pre_holdout_gate",
+  "command": "python scripts/check_final_evaluation_protocol.py",
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "1eb37f449c0962e3e3d349df0168713ed839596e",
+    "dirty": true
+  },
+  "protocol_sha256": "97dc4682c13d0f892677c18da9e84aacf1cad06974cd4b11804fa293fc961167",
+  "protocol_status": "pre_holdout_ready",
+  "data_sha256": "0000b68ae83311d0047cbaf3ba41bd1629d9adcc60c8e3c848cc9de87a2a2b5c",
+  "split_sha256": "ef451f01453473a2fd161b8e0c0da902d3d2a0addeda11ab8185bbab5f083090",
+  "split": {
+    "rows": 10000,
+    "development_rows": 8000,
+    "holdout_rows": 2000,
+    "fold_counts": {
+      "0": 1600,
+      "1": 1600,
+      "2": 1600,
+      "3": 1600,
+      "4": 1600
+    },
+    "unique_ids": 10000
+  },
+  "tasks": {
+    "task1": {
+      "target": "Sleep_Quality_Score",
+      "selected_model": "lightgbm_residual_w0p75",
+      "primary_metric": "r2",
+      "selection_run_id": "20260829T001923+0800_task1_nested_residual_1daa2d59",
+      "confirmation_run_id": "20260829T002532+0800_task1_residual_stability_fe7d4957",
+      "candidate_config_sha256": "4c87fe9c08eacda6f4802264c933d0d7bffb7301e652689a92adbcfd7ae23b16",
+      "candidate_manifest_sha256": "7f7e5063094dabac9a68ce92573907c6790864899e9dd905a01dbe70f79f9df7",
+      "holdout_evaluated": false,
+      "final_model_trained": false
+    },
+    "task2": {
+      "target": "Productivity_Score",
+      "selected_model": "elastic_a0p01_l1_0p9",
+      "primary_metric": "adjusted_r2_raw",
+      "selection_run_id": "20260829T173352+0800_task2_elastic_tuning_59b765b7",
+      "confirmation_run_id": "20260829T190021+0800_task2_learning_curve_3d139646",
+      "candidate_config_sha256": "ce49aec9b56abfaa0a99412807a65e9847c1298be1fd33474a21f1c7a31034db",
+      "candidate_manifest_sha256": "14d5f183e05c389083dc9af6cc2e0fbbf628ccd956f19804abec1b902c728c32",
+      "holdout_evaluated": false,
+      "final_model_trained": false
+    },
+    "task3": {
+      "target": "Health_Score",
+      "selected_model": "additive_elastic_k4_d2_a0p003",
+      "primary_metric": "r2",
+      "selection_run_id": "20260829T235336+0800_task3_additive_c92b6dee",
+      "confirmation_run_id": "20260829T235738+0800_task3_additive_refinement_b1e98c2f",
+      "candidate_config_sha256": "671b0b4c1f1b52f178a109cd05800d5b581ba5b3c8abf6b048a36b4e5757e917",
+      "candidate_manifest_sha256": "75426028937bb717651f83607a7c231cb69f0cccc2cd1d880e1360d09741067d",
+      "holdout_evaluated": false,
+      "final_model_trained": false
+    }
+  },
+  "evaluation_model_training_authorized": true,
+  "holdout_evaluation_authorized": false,
+  "paper_artifact_gate": "blocked_until_manual_confirmation",
+  "duration_seconds": 0.2912099999998645,
+  "python_version": "3.12.13",
+  "platform": "Windows-11-10.0.26200-SP0"
+}

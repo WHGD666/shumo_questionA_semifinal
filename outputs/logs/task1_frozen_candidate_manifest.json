@@ -1,10 +1,10 @@
 {
-  "created_at": "2026-08-29T00:47:31.306014+08:00",
+  "created_at": "2026-08-30T11:05:02.897510+08:00",
   "task": "task1",
   "target": "Sleep_Quality_Score",
   "status": "development_candidate_frozen",
   "candidate_config": "configs/task1_frozen_candidate.toml",
-  "candidate_config_sha256": "9588a53ce7aa8e7d8d4d0498a795b2a8b1f50e47350254901d83b0f892187d42",
+  "candidate_config_sha256": "4c87fe9c08eacda6f4802264c933d0d7bffb7301e652689a92adbcfd7ae23b16",
   "selection_run_id": "20260829T001923+0800_task1_nested_residual_1daa2d59",
   "confirmation_run_id": "20260829T002532+0800_task1_residual_stability_fe7d4957",
   "selected_model": "lightgbm_residual_w0p75",

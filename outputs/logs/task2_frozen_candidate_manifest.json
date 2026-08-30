@@ -1,10 +1,10 @@
 {
-  "created_at": "2026-08-29T19:08:06.018200+08:00",
+  "created_at": "2026-08-30T11:05:04.620312+08:00",
   "task": "task2",
   "target": "Productivity_Score",
   "status": "development_candidate_frozen",
   "candidate_config": "configs/task2_frozen_candidate.toml",
-  "candidate_config_sha256": "412df7b01ff605667d0dfbd0093b548e33e277b7da7458254e68dfb83dc5d545",
+  "candidate_config_sha256": "ce49aec9b56abfaa0a99412807a65e9847c1298be1fd33474a21f1c7a31034db",
   "selection_run_id": "20260829T173352+0800_task2_elastic_tuning_59b765b7",
   "confirmation_run_id": "20260829T190021+0800_task2_learning_curve_3d139646",
   "selected_model": "elastic_a0p01_l1_0p9",

@@ -1,0 +1,56 @@
+[protocol]
+version = "1.0"
+status = "pre_holdout_ready"
+id_column = "Person_ID"
+data_path = "data/raw/A题数据集.csv"
+split_path = "data/splits/split_assignments.csv"
+development_rows = 8000
+holdout_rows = 2000
+cv_folds = 5
+seed = 2026
+holdout_policy = "sealed_one_time"
+holdout_confirmation_token = "SEMIFINAL_FINAL_HOLDOUT_ONCE"
+allow_repeated_holdout_evaluation = false
+release_refit_policy = "defer_until_holdout_locked_and_competition_rules_confirmed"
+
+[tasks.task1]
+target = "Sleep_Quality_Score"
+primary_metric = "r2"
+auxiliary_metrics = ["mae", "rmse"]
+candidate_config = "configs/task1_frozen_candidate.toml"
+candidate_manifest = "outputs/logs/task1_frozen_candidate_manifest.json"
+selected_model = "lightgbm_residual_w0p75"
+
+[tasks.task2]
+target = "Productivity_Score"
+primary_metric = "adjusted_r2_raw"
+auxiliary_metrics = ["r2", "mae", "rmse"]
+candidate_config = "configs/task2_frozen_candidate.toml"
+candidate_manifest = "outputs/logs/task2_frozen_candidate_manifest.json"
+selected_model = "elastic_a0p01_l1_0p9"
+
+[tasks.task3]
+target = "Health_Score"
+primary_metric = "r2"
+auxiliary_metrics = ["mae", "rmse"]
+candidate_config = "configs/task3_frozen_candidate.toml"
+candidate_manifest = "outputs/logs/task3_frozen_candidate_manifest.json"
+selected_model = "additive_elastic_k4_d2_a0p003"
+
+[evaluation_gate]
+evaluation_model_training_authorized = true
+holdout_evaluation_authorized = false
+require_serialization_round_trip = true
+require_raw_schema_prediction_test = true
+require_model_hash_verification = true
+require_exact_confirmation_token = true
+
+[paper_artifact_gate]
+status = "blocked_until_manual_confirmation"
+requires_user_confirmation = true
+stop_and_remind_user = true
+prohibited_before_confirmation = [
+  "paper_table_code",
+  "paper_figure_code",
+  "paper_evidence_index_code",
+]
