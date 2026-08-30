@@ -1,0 +1,40 @@
+{
+  "run_id": "20260830T124850+0800_final_registry_eff05848",
+  "status": "completed",
+  "experiment": "final_results_machine_registry",
+  "paper_artifacts_generated": false,
+  "git": {
+    "branch": "codex/fusai-foundation",
+    "commit": "e4788a8d6c843427d97fb8f7f37c4f226c61d597",
+    "dirty": false
+  },
+  "registry_path": "outputs/tables/final_results_registry.csv",
+  "registry_sha256": "071708b94def4a475e1e11ecf5f56737496b344f40b98326f8ca1d3ef4fa6977",
+  "registry_config_sha256": "427515c174092033eccae13c02f495b32c8002173403ed94341f859588343f37",
+  "holdout_run_id": "20260830T115206+0800_final_holdout_7abae5b7",
+  "holdout_consumed": true,
+  "task_count": 3,
+  "all_source_checks_passed": true,
+  "official_hidden_test_score": false,
+  "source_hashes": {
+    "task1_frozen_manifest": "7f7e5063094dabac9a68ce92573907c6790864899e9dd905a01dbe70f79f9df7",
+    "task1_frozen_config": "4c87fe9c08eacda6f4802264c933d0d7bffb7301e652689a92adbcfd7ae23b16",
+    "task1_model_manifest": "9e1a6dbba57a7638a351694b6b69c5534b3e3dbd87c11fdaf00b6166630f6c94",
+    "task1_model": "010aefc910205e5d9f88ff5327ecb8958eac9b1d34c3fa0114a07b1360c74efa",
+    "task1_holdout_predictions": "889d8b5773147598f8f09df2fdeb41199b43ba875570237b660e3540b62fcd52",
+    "task2_frozen_manifest": "14d5f183e05c389083dc9af6cc2e0fbbf628ccd956f19804abec1b902c728c32",
+    "task2_frozen_config": "ce49aec9b56abfaa0a99412807a65e9847c1298be1fd33474a21f1c7a31034db",
+    "task2_model_manifest": "e65c2e58a604dc8f23930c9fcce65defd7e25e9093d435be97239979356d7b11",
+    "task2_model": "d09226bd2e784e2d90703bdc444a7c18cb73349ef6a06fb9c74f9126bdbb9858",
+    "task2_holdout_predictions": "f640e18355e2e13086af08519eb84c7ae0c5a9d4107598d4749d278ac07d4e7c",
+    "task3_frozen_manifest": "75426028937bb717651f83607a7c231cb69f0cccc2cd1d880e1360d09741067d",
+    "task3_frozen_config": "671b0b4c1f1b52f178a109cd05800d5b581ba5b3c8abf6b048a36b4e5757e917",
+    "task3_model_manifest": "a676bc0a1558f303c0bea800aa053123558b6239c7782564c1c33d4e4bf13ae3",
+    "task3_model": "82fbcfb18522f977402b0d705be22c60d3b07f3fb5d43d1dd634a1a897fd12a8",
+    "task3_holdout_predictions": "4ce79a1c64f56b214a2dddffbf83437c44037a657506644e2c3039e4c2ea7053",
+    "holdout_metrics": "ecad46f73fcf5bda4bb54783df2d5b587b11f3ffe45b94fd1e730d83184507e7",
+    "holdout_manifest": "eafe04e053cba66c5fff575e27074495b014f1f60cc1a1191583386397984dc5",
+    "holdout_consumed_marker": "35d48d1af0b0ac8bb75318ca85a7056f779e9c212a2b0e7ed99fcb6a9478e3b1",
+    "evaluation_model_training_manifest": "07dc9ecb45efe9b9d69e5c09ed1b19e9faa199a0d64f3e376d58aab5ce0190bb"
+  }
+}
