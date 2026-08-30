@@ -1,0 +1,26 @@
+[training]
+role = "internal_holdout_evaluation"
+training_split = "development"
+training_rows = 8000
+sealed_holdout_rows = 2000
+holdout_labels_used = false
+model_directory = "outputs/models/evaluation"
+combined_manifest = "outputs/logs/final_evaluation_model_training_manifest.json"
+
+[artifacts.task1]
+filename = "task1.joblib"
+manifest = "outputs/logs/task1_evaluation_model_manifest.json"
+target = "Sleep_Quality_Score"
+selected_model = "lightgbm_residual_w0p75"
+
+[artifacts.task2]
+filename = "task2.joblib"
+manifest = "outputs/logs/task2_evaluation_model_manifest.json"
+target = "Productivity_Score"
+selected_model = "elastic_a0p01_l1_0p9"
+
+[artifacts.task3]
+filename = "task3.joblib"
+manifest = "outputs/logs/task3_evaluation_model_manifest.json"
+target = "Health_Score"
+selected_model = "additive_elastic_k4_d2_a0p003"
