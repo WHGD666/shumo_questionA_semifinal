@@ -37,3 +37,6 @@ outputs/predictions/*
 *.temp
 *.bak
 ~$*
+
+# Submission package: regenerable source copy and package-side joblib artifacts
+submission/model/source/
