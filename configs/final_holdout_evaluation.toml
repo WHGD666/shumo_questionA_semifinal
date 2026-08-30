@@ -1,0 +1,15 @@
+[evaluation]
+role = "internal_frozen_holdout"
+split = "holdout"
+expected_rows = 2000
+allow_overwrite = false
+metrics_path = "outputs/tables/final_holdout_metrics.csv"
+manifest_path = "outputs/logs/final_holdout_evaluation_manifest.json"
+consumed_marker_path = "outputs/logs/final_holdout_consumed.json"
+model_training_manifest = "outputs/logs/final_evaluation_model_training_manifest.json"
+history_directory = "outputs/logs/history"
+
+[predictions]
+task1 = "outputs/predictions/task1_final_holdout_predictions.csv"
+task2 = "outputs/predictions/task2_final_holdout_predictions.csv"
+task3 = "outputs/predictions/task3_final_holdout_predictions.csv"
