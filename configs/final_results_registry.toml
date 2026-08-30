@@ -1,0 +1,12 @@
+[registry]
+output_path = "outputs/tables/final_results_registry.csv"
+manifest_path = "outputs/logs/final_results_registry_manifest.json"
+history_directory = "outputs/logs/history"
+allow_overwrite = false
+paper_artifacts_generated = false
+
+[sources]
+holdout_metrics = "outputs/tables/final_holdout_metrics.csv"
+holdout_manifest = "outputs/logs/final_holdout_evaluation_manifest.json"
+holdout_consumed_marker = "outputs/logs/final_holdout_consumed.json"
+evaluation_model_training_manifest = "outputs/logs/final_evaluation_model_training_manifest.json"
